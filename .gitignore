@@ -18,3 +18,5 @@ TAGS
 TAG
 CTAGS
 Makefile.local
+
+doc/build

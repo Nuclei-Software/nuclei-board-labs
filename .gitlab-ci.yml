@@ -1,0 +1,36 @@
+variables:
+#  GIT_STRATEGY: fetch
+    CI_SCRATCH: /home/xl_ci/ci_scratch
+
+
+before_script:
+    - module load common
+
+stages:
+    - release
+
+deploy_doc:
+    stage: release
+    retry: 1
+    artifacts:
+        name: "nuclei_board_labs_doc-${CI_COMMIT_SHA::8}"
+        paths:
+            - doc/build
+        expire_in: 2 day
+    script:
+        - cd doc
+        - pip3 install --user -r requirements.txt
+        - export PATH=$HOME/.local/bin:$PATH
+        - make clean
+        - make all
+        - ssh xl01 "rm -rf /home/xl_ci/doc_center/nuclei_board_labs/*"
+        - ssh xl01 "mkdir -p /home/xl_ci/doc_center/nuclei_board_labs/"
+        - cd build
+        - scp -r html xl01:/home/xl_ci/doc_center/nuclei_board_labs
+        - cd ..
+          #- make linkcheck
+        - make latexpdf
+    tags:
+        - software-server
+    only:
+        - master
