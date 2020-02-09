@@ -95,6 +95,11 @@ rst_epilog = """
 .. |nuclei_nxcore| replace:: Nuclei NX Class Processors
 .. |nmsis_support_cores| replace:: N200, N300, N600, NX600
 .. |nmsis_core_defines| replace:: **NUCLEI_N200**, **NUCLEI_N300**, **NUCLEI_N600** or **NUCLEI_NX600**
+.. |nuclei_board| replace:: Nuclei Development Board
+.. |Nu-SDK| replace:: Nuclei SDK
+.. |RV-STAR| replace:: RV-STAR Development Kit
+.. |SES| replace:: Segger Embedded Studio
+.. |GD| replace:: GDVF103 MCU
 """
 # -- Extension configuration -------------------------------------------------
 
