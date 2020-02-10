@@ -14,8 +14,8 @@ Nuclei Board Labs
    :maxdepth: 3
    :numbered:
 
-   overview/index.rst
-   getstarted/index.rst
+   overview/overview.rst
+   getstarted/getstarted.rst
    labs/index.rst
    changelog.rst
    appendix.rst

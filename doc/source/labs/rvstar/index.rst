@@ -1,7 +1,7 @@
 .. _labs_rvstar:
 
-RVStar Board Labs
-=================
+|rv_star|
+=========
 
 .. toctree::
    :maxdepth: 3
