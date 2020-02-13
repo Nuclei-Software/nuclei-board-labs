@@ -7,4 +7,4 @@ Advanced Labs
     :maxdepth: 1
     :glob:
 
-    level2/TBD
+    level2/lab2_1

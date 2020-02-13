@@ -90,7 +90,7 @@ rst_prolog = """
 """
 
 rst_epilog = """
-.. |nuclei_core| replace:: Nuclei N/NX Class Processors
+.. |nuclei_core| replace:: Nuclei Processor Cores
 .. |nuclei_ncore| replace:: Nuclei N Class Processors
 .. |nuclei_nxcore| replace:: Nuclei NX Class Processors
 .. |nmsis_support_cores| replace:: N200, N300, N600, NX600
