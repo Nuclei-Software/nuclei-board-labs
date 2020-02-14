@@ -6,7 +6,7 @@ SoC Peripheral: Timer
 **Purpose**
 
 - To get familar with the peripheral of |gd_mcu|: Timer
-- To learn how to program peripheral registers to control the MCU Timer
+- To know how to program peripheral registers to control the MCU Timer
 
 **Requirements**
 
@@ -59,7 +59,7 @@ The program flow is shown below: (TBD)
     .. code-block:: console
 
        cd /nuclei-sdk/board-labs/rvstar/timer_pwm
-       make BOARD=rvstar run
+       make SOC=gd32vf103 BOARD=gd32vf103v_rvstar upload
 
 * |ses|
 

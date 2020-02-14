@@ -20,7 +20,9 @@ The architecture of Nuclei Board Labs are shown in the block diagram below.
 
    Architecture of Nuclei Board Labs
 
-The labs are developed based on the `Nuclei Software Development Kit (Nuclei SDK) <https://github.com/Nuclei-Software/nuclei-sdk>`__ which is an open software platform to facilitate the development of embedded systems based on |nuclei_core|. 
+The labs are developed based on the `Nuclei Software Development Kit (Nuclei SDK) <https://github.com/Nuclei-Software/nuclei-sdk>`__ which is an open software platform to facilitate the software development of systems based on |nuclei_core|. 
+
+In |nuclei_sdk|, the `Nuclei MCU Software Interface Standard (NMSIS) <https://github.com/Nuclei-Software/NMSIS>`__  is a vendor-independent hardware abstraction layer for micro-controllers that are based on |nuclei_core|.
 
 This handbook only introduces how to run the applications in Nuclei board labs, if you want to get more details about |nuclei_sdk| and |nuclei_core|, please click the links in the following table to get the corresponding online docs.
 
@@ -41,7 +43,7 @@ This handbook only introduces how to run the applications in Nuclei board labs, 
 
 
 .. note::
-    As different SoC has different peripherals, so about the details of SoC peripherals, please refer to the specified SoC reference mannual.
+    As different SoCs has different peripherals, so about the details of SoC peripherals, please refer to the specified SoC reference mannual.
 
 
 This handbook includes a series of labs (more labs will be added in the future), which are roughly classified into two levels:

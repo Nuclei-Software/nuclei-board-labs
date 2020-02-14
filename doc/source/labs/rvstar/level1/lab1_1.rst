@@ -61,7 +61,7 @@ In the code, the number of on-board User Key(PA0-WKUP) pressed is counted, the s
     .. code-block:: console
 
        cd /nuclei-sdk/board-labs/rvstar/running_red
-       make BOARD=rvstar run
+       make SOC=gd32vf103 BOARD=gd32vf103v_rvstar upload
 
 * |ses|
 

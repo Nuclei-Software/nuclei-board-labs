@@ -87,7 +87,7 @@ The program flow is shown below:
     .. code-block:: console
 
        cd /nuclei-sdk/board-labs/rvstar/nesting_of_interrupts
-       make BOARD=rvstar run
+       make SOC=gd32vf103 BOARD=gd32vf103v_rvstar upload
 
 * |ses|
 
