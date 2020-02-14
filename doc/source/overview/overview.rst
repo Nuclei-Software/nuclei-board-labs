@@ -56,7 +56,7 @@ For example, the usage of on-board peripherals, the basic features of |nuclei_co
 * Level 2: Advanced Labs
 
 The labs in this level cover the advanced topics of |nuclei_board|. 
-For example, benchmark tests, basic applications (additional hardware needed), Real-Time Operating System (RTOS), and so on.
+For example, basic applications (additional hardware needed), Real-Time Operating System (RTOS), and so on.
 
 
 Supported Hardware Platform
