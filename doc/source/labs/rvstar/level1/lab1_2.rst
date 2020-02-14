@@ -43,9 +43,6 @@ The code for this lab is located in ``nuclei-sdk/board-labs/rvstar/timer_pwm``. 
 * Part2 : Timer config, program *TIMER1* to generate PWM signals
 * Part3 : RGB config, assign the duty cycle of generated PWM signals to set the color of on-board RGB LED
 
-The program flow is shown below: (TBD)
-
-
 **Steps**
 
 1. Connect |rv_star| and your computer with the USB Type-C cable.
@@ -65,7 +62,7 @@ The program flow is shown below: (TBD)
 
     Using the following actions:
 
-3. Check the color of on-board RGB LED, it's yellow.
+3. Check the color change of on-board RGB LED.
 
 .. _figure_lab1_2_1:
 
