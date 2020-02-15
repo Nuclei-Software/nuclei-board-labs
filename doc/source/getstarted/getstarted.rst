@@ -88,9 +88,9 @@ If the download is successful, the following folder structure is displayed:
     │   ├── OS
     │   ├── SoC
     │   └── test
-    └──rvstar_examples
-       ├── rvstar_examples.emProject
-       └── rvstar_examples.emSession
+    └──rvstar_demos
+       ├── rvstar_demos.emProject
+       └── rvstar_demos.emSession
 
 
 Quick Start

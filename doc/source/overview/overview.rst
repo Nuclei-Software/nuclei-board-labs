@@ -10,7 +10,7 @@ This is a handbook for Nuclei Board Labs which is a part of courses in Nuclei Un
 This handbook describes how to develop with |nuclei_board| through a step-by-step way, it can be used as lab teaching metarials. 
 Anyone interested in |nuclei_core| can also take this handbook as a quick start-up to develop with |nuclei_core| in the field of embedded systems.
 
-The architecture of Nuclei Board Labs are shown in the block diagram below.
+The hierarchy of Nuclei Board Labs are shown in the block diagram below.
 
 .. _figure_overview_1:
 
@@ -18,7 +18,7 @@ The architecture of Nuclei Board Labs are shown in the block diagram below.
    :width: 600
    :alt: overview_fig1
 
-   Architecture of Nuclei Board Labs
+   Hierarchy of Nuclei Board Labs
 
 The labs are developed based on the `Nuclei Software Development Kit (Nuclei SDK) <https://github.com/Nuclei-Software/nuclei-sdk>`__ which is an open software platform to facilitate the software development of systems based on |nuclei_core|. 
 
