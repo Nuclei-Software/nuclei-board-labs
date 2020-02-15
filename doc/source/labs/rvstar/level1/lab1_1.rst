@@ -15,7 +15,7 @@ The following hardware and source codes are required:
 * PC host
 * Nuclei board (|rv_star|)
 * USB Type-C cable
-* ``nuclei-sdk/board-labs/rvstar/running_red`` 
+* ``nuclei-sdk/board-labs/rvstar/running_led`` 
 
 **Content**
 
@@ -44,7 +44,7 @@ this lab shows how to program the GPIO to control these on-board peripherals of 
 
 In |nuclei_sdk|, ``gd32vf103_rvstar.h`` provides API to operate these on-board peripherals.
 
-The code for this lab is located in ``nuclei-sdk/board-labs/rvstar/running_red``.
+The code for this lab is located in ``nuclei-sdk/board-labs/rvstar/running_led``.
 In the code, the number of on-board User Key(PA0-WKUP) pressed is counted, the status of RGB LED changes according to this number, and this info is displayed in the UART teminal.
 
 
@@ -52,7 +52,7 @@ In the code, the number of on-board User Key(PA0-WKUP) pressed is counted, the s
 
 1. Connect |rv_star| and your computer with the USB Type-C cable, and open UART terminal.
 
-2. Compile and run the ``nuclei-sdk/board-labs/rvstar/running_red`` example.
+2. Compile and run the ``nuclei-sdk/board-labs/rvstar/running_led`` example.
 
 * |nuclei_sdk|
 
@@ -60,7 +60,7 @@ In the code, the number of on-board User Key(PA0-WKUP) pressed is counted, the s
 
     .. code-block:: console
 
-       cd /nuclei-sdk/board-labs/rvstar/running_red
+       cd /nuclei-sdk/board-labs/rvstar/running_led
        make SOC=gd32vf103 BOARD=gd32vf103v_rvstar upload
 
 * |ses|
