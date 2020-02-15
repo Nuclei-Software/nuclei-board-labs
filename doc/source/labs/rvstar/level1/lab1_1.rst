@@ -67,13 +67,21 @@ In the code, the number of on-board User Key(PA0-WKUP) pressed is counted, the s
 
     Using the following actions:
 
+    .. _figure_lab1_1_2:
+
+    .. figure:: /asserts/medias/lab1_1_fig2.jpg
+       :width: 900
+       :alt: lab1_1_fig2
+
+       Operations in Embedded Studio
+
 3. Press the on-board User Key(PA0-WKUP), then check the result in UART terminal, and watch the changes of on-board RGB LED.
 
-.. _figure_lab1_1_2:
+.. _figure_lab1_1_3:
 
-.. figure:: /asserts/medias/lab1_1_fig2.jpg
+.. figure:: /asserts/medias/lab1_1_fig3.jpg
    :width: 800
-   :alt: lab1_1_fig2
+   :alt: lab1_1_fig3
 
    Experimental results
 

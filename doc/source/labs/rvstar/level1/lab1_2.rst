@@ -62,13 +62,21 @@ The code for this lab is located in ``nuclei-sdk/board-labs/rvstar/timer_pwm``. 
 
     Using the following actions:
 
+    .. _figure_lab1_2_1:
+
+    .. figure:: /asserts/medias/lab1_2_fig1.jpg
+       :width: 900
+       :alt: lab1_2_fig1
+
+       Operations in Embedded Studio
+
 3. Check the color change of on-board RGB LED.
 
-.. _figure_lab1_2_1:
+.. _figure_lab1_2_2:
 
-.. figure:: /asserts/medias/lab1_2_fig1.jpg
+.. figure:: /asserts/medias/lab1_2_fig2.jpg
    :width: 500
-   :alt: lab1_2_fig1
+   :alt: lab1_2_fig2
 
    Experimental results
 

@@ -93,12 +93,20 @@ The program flow is shown below:
 
     Using the following actions:
 
+    .. _figure_lab1_4_3:
+
+    .. figure:: /asserts/medias/lab1_4_fig3.jpg
+       :width: 900
+       :alt: lab1_4_fig3
+
+       Operations in Embedded Studio
+
 3. Check the status of on-board RGB LED, then press the on-board User Key(PA0-WKUP), and check the status of on-board RGB LED again.
 
-.. _figure_lab1_4_3:
+.. _figure_lab1_4_4:
 
-.. figure:: /asserts/medias/lab1_4_fig3.jpg
-   :alt: lab1_4_fig3
+.. figure:: /asserts/medias/lab1_4_fig4.jpg
+   :alt: lab1_4_fig4
    :width: 600
 
    Experimental results
