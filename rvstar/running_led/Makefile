@@ -1,4 +1,4 @@
-TARGET = hello_world
+TARGET = running_led
 
 NUCLEI_SDK_ROOT = ../../..
 

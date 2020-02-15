@@ -1,4 +1,4 @@
-TARGET = hello_world
+TARGET = exti_key_interrupt
 
 NUCLEI_SDK_ROOT = ../../..
 

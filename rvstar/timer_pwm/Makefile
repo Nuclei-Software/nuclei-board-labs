@@ -1,4 +1,4 @@
-TARGET = hello_world
+TARGET = timer_pwm
 
 NUCLEI_SDK_ROOT = ../../..
 

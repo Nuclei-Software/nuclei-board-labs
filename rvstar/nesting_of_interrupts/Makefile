@@ -1,4 +1,4 @@
-TARGET = hello_world
+TARGET = nesting_of_interrupts
 
 NUCLEI_SDK_ROOT = ../../..
 
