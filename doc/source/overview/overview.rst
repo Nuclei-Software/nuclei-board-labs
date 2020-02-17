@@ -34,11 +34,11 @@ This handbook only introduces how to run the applications in Nuclei board labs, 
    +-------------------------+----------------------------------------------------------------------------------+
    |        Item             |    Online Docs                                                                   |
    +-------------------------+----------------------------------------------------------------------------------+
-   | Nuclei processor core   |   `Nuclei ISA Spec <https://nuclei-software.github.io/NMSIS/html/index.html>`_   |
+   | Nuclei processor core   |   `Nuclei ISA Spec <http://doc.nucleisys.com/nuclei_spec/>`_                     |
    +-------------------------+----------------------------------------------------------------------------------+
-   | Nuclei software library |   `Nuclei SDK <https://nuclei-software.github.io/NMSIS/html/index.html>`_        |
+   | Nuclei software library |   `Nuclei SDK <http://doc.nucleisys.com/nuclei_sdk>`_                            |
    |                         +----------------------------------------------------------------------------------+
-   |                         |   `NMSIS <https://nuclei-software.github.io/NMSIS/html/index.html>`_             |
+   |                         |   `NMSIS <http://doc.nucleisys.com/nmsis/>`_                                     |
    +-------------------------+----------------------------------------------------------------------------------+
 
 

@@ -15,9 +15,7 @@ Tools Requirement
 
   * Windows build tools: a Windows specific package which provides GNU make, and BusyBox which provides a convenient implementation for sh/rm/echo.
 
-  * HBird Driver: JTAG debugger driver on Windows
-
-* `Segger Embedded Studio <https://https://www.segger.com/downloads/embedded-studio/>`_  is a complete all-in-one solution for managing, building, testing, and deploying your embedded applications which support RISC-V processors, it provides a GUI based development environment.
+* `Segger Embedded Studio <https://www.segger.com/downloads/embedded-studio/>`_  is a complete all-in-one solution for managing, building, testing, and deploying your embedded applications which support RISC-V processors, it provides a GUI based development environment.
 
 * `Tera Term <http://ttssh2.osdn.jp/>`_ or `PuTTY <https://www.putty.org/>`_ for serial terminal connection. The serial configurations are 115200 baud, 8 bits data, 1 stop bit, and no parity (115200-8-N-1) by default.
 
@@ -73,7 +71,7 @@ Using Git to clone the repository anonymously
 
 .. code-block:: console
 
-   git clone https://github.com/Nuclei-Software/nuclei-board-labs.git board-labs
+   git clone https://github.com/riscv-mcu/ses_nuclei_sdk_projects.git nuclei_board_labs
 
 If the download is successful, the following folder structure is displayed:
 
@@ -101,7 +99,7 @@ Develop with |nuclei_sdk|
 
 |nuclei_sdk| includes Makefile, so you can develop your |nuclei_board| by using command line mode. There are scripts in it that you need to set up your development environment.
 
-How to develop with |nuclei_sdk| step by step, please see this `online docs <https://nuclei-software.github.io/NMSIS/html/index.html>`__.
+How to develop with |nuclei_sdk| step by step, please see this `online docs <http://doc.nucleisys.com/nuclei_sdk/quickstart.html>`__.
 
 Develop with |ses|
 ******************

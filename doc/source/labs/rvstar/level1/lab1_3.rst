@@ -19,7 +19,7 @@ The following hardware and source codes are required:
 
 **Content**
 
-- Through learning the `Nuclei RISCV ISA Spec <https://nuclei-software.github.io/NMSIS/html/index.html>`_ to get familar with interrput handling in |nuclei_ncore|.
+- Through learning the `Nuclei RISCV ISA Spec <http://doc.nucleisys.com/nuclei_spec/>`_ to get familar with interrput handling in |nuclei_ncore|.
 - Through learning the `GD32VF103 MCU User Mannual <https://github.com/riscv-mcu/GD32VF103_DataSheets/blob/master/GD32VF103_User_Manual_EN_V1.0.pdf>`_ to get familar with the usage of EXTI.
 - Programming the EXTI peripheral registers of SoC and ECLIC registers of Core to setup an external interrupt  which is triggered by pressing the on-board user key, and the corresponding interrupt service routine can change the status of on-board RGB LED.
 

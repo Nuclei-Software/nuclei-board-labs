@@ -24,7 +24,7 @@ The following hardware and source codes are required:
     
 **Principles**
 
-About the brief introduction of applications included in |nuclei_sdk|, please refer to this `online docs <https://en.wikipedia.org/wiki/Dhrystone>`_.
+About the brief introduction of applications included in |nuclei_sdk|, please refer to this `online docs <http://doc.nucleisys.com/nuclei_sdk/design/app.html>`_.
 
 There are many demos in ``nuclei-sdk/application/``, here we just take the FreeRTOS demo as an example to run. This demo shows the swapping of tasks and the usage of software timer.
 

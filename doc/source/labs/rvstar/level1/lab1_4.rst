@@ -19,7 +19,7 @@ The following hardware and source codes are required:
 
 **Content**
 
-- Through learning the `Nuclei RISCV ISA Spec <https://nuclei-software.github.io/NMSIS/html/index.html>`_ to get familar with interrupt preemption in |nuclei_ncore|.
+- Through learning the `Nuclei RISCV ISA Spec <http://doc.nucleisys.com/nuclei_spec/>`_ to get familar with interrupt preemption in |nuclei_ncore|.
 - Programming the EXTI peripheral registers and the Timer peripheral registers of SoC, ECLIC registers of Core to create two external interrupts which are triggered by pressing the on-board user key and SoC Timer seperately, and set interrput initiated by user key to a higher level. And here two interrupt service routines change on-board RGB LED to two different statuses.
 
 .. note::
@@ -49,7 +49,7 @@ d. Completing the SoC Timer interrupt service routine, the core will return to e
    Interrupt preemption example
 
 .. note::
-	In the Nuclei processor core, the supported methods for interrupt preemption depending on whether the interrupt is a vectored interrupt or a non-vectored interrupt. Please see `(CLIC mode) Vectored and Non-Vectored Processing Mode of Interrupts <https://github.com/riscv-mcu/GD32VF103_DataSheets/blob/master/GD32VF103_User_Manual_EN_V1.0.pdf>`_ for more details.
+	In the Nuclei processor core, the supported methods for interrupt preemption depending on whether the interrupt is a vectored interrupt or a non-vectored interrupt. Please see `(CLIC mode) Vectored and Non-Vectored Processing Mode of Interrupts <http://doc.nucleisys.com/nuclei_spec/isa/interrupt.html#clic-mode-vectored-and-non-vectored-processing-mode-of-interrupts>`_ for more details.
 
 In |nuclei_sdk|, ``gd32vf103_rvstar.h`` provides API to operate the on-board peripherals, ``gd32vf103_timer.h`` provides API to operate the SoC Timer, ``gd32vf103_exti.h`` provides API to operate the SoC EXTI, ``core_feature_eclic.h`` provides API to config ECLIC feature for Nuclei Core.
 
