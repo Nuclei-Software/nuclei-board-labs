@@ -8,6 +8,7 @@ before_script:
 
 stages:
     - release
+    - deploy
 
 deploy_doc:
     stage: release
@@ -30,7 +31,20 @@ deploy_doc:
         - cd ..
           #- make linkcheck
         - make latexpdf
+        - cp build/latex/*.pdf build/html/
     tags:
         - software-server
     only:
         - master
+
+deploy_website:
+    stage: deploy
+    retry: 1
+    script:
+        - ./.ci/ftp_deploy.sh $FTPUSER $FTPPWD $FTPSERVER doc/build/html nuclei_board_labs
+    tags:
+        - software-server
+    only:
+        - master
+    dependencies:
+        - deploy_doc
