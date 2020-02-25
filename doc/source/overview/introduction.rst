@@ -1,10 +1,8 @@
-.. _overview:
+.. _introduction:
 
-Overview
-========
 
 Introduction
-############
+============
 
 This is a handbook for Nuclei Board Labs which is a part of courses in Nuclei University Program. 
 This handbook describes how to develop with |nuclei_board| through a step-by-step way, it can be used as lab teaching metarials. 
@@ -58,13 +56,3 @@ For example, the usage of on-board peripherals, the basic features of |nuclei_co
 The labs in this level cover the advanced topics of |nuclei_board|. 
 For example, basic applications (additional hardware needed), Real-Time Operating System (RTOS), and so on.
 
-
-Supported Hardware Platform
-###########################
-
-The following |nuclei_core| based hardware platforms (more boards will be added in the future) are supported in this handbook.
-
-  * `RV-STAR Development Kit <http://www.riscv-mcu.com/quickstart-quickstart.html>`_
-  * ...
-
-You can click the above links to get the platform's brief introduction and user manual as a reference.
