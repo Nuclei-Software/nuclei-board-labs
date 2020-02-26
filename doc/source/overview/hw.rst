@@ -420,6 +420,92 @@ The jumpers on RV-STAR are shown in the figure below, and their functions are de
     Symbol "**O**" in the up table means connected.
 
 
+
+On-board Debugger Driver 
+------------------------     
+
+**Install the Driver in Linux PC**
+  For the Linux computer, the steps of installing driver for on-board debugger are as below: 
+
+  1. Prepare the PC. Use the VMware WorkStation to have Linux virtual machine installed, or just use the native Linux OS on your computer. It is recommended to use Ubuntu 16.04 or above version.
+
+  2. Connect the PC and |rv_star| with the USB Type-C cable, make sure the USB is really be recognized by the Linux. For example, the USB symbol is highlighted in Ubuntu, as depicted in the figure below.
+
+  3. Use the command to check the USB status.
+
+      .. code-block:: console
+
+          lsusb   // The example information displayed as below
+          ...
+          Bus 001 Device 010: ID 0403:6010 Future Technology Devices International, Ltd FT2232xxxx
+
+  4. Use the following command to set udev rules, to make this USB can be accessed by plugdev group.
+
+      .. code-block:: console
+
+          sudo vi /etc/udev/rules.d/99-openocd.rules
+          // Use vi command to edit the file, and add the following lines
+          SUBSYSTEM=="usb", ATTR{idVendor}=="0403",
+          ATTR{idProduct}=="6010", MODE="664", GROUP="plugdev"
+          SUBSYSTEM=="tty", ATTRS{idVendor}=="0403",
+          ATTRS{idProduct}=="6010", MODE="664", GROUP="plugdev"
+
+  5. Use the following command to check if this USB is belong to plugdev group.
+
+      .. code-block:: console
+
+          ls /dev/ttyUSB*       // The example information showed as below after this command
+          /dev/ttyUSB0 /dev/ttyUSB1
+
+          ls -l /dev/ttyUSB1    // The example information showed as below after this command
+          crw-rw-r-- 1 root plugdev 188, 1 Nov 28 12:53 /dev/ttyUSB1
+
+  6. Add your user name into the plugdev group.
+
+      .. code-block:: console
+
+          whoami  
+          // Use above command to check your user name, assuming it is your_user_name
+          // Use below command to add your_user_name into plugdev group
+          sudo usermod -a -G plugdev your_user_name
+
+  7. Double check if your user name is really belong to plugdev group.
+
+      .. code-block:: console
+
+          groups      // The example information showed as below after this command
+          ... plugdev ...
+          // As long as you can see plugdev in groups, then means it is really belong to. 
+
+  .. _figure_hw_5:
+
+  .. figure:: /asserts/medias/hw_fig5.jpg
+     :width: 500
+     :alt: hw_fig5
+
+     Ubuntu OS recognized USB
+
+
+**Install the Driver in Windows PC**
+  For the Windows computer, the steps of installing driver for on-board debugger are as below: 
+
+  1. Connect the PC and |rv_star| with the USB Type-C cable, make sure the USB is really be recognized by the Windows. 
+
+  2. Download the on-board debugger’s Driver for Windows from `this page <https://www.nucleisys.com/developboard.php>`_, as depicted in the figure below.
+
+  3. After downloading the package, double-click the **HBird_Driver.exe**.
+
+  4. Since the on-board debugger has the functionality that “convert the UART to USB”, so if you have connected |rv_star| with PC and installed the driver successfully, then you will be able to see a USB Serial Port (e.g., COM8) show up in your Windows Device Manager.
+
+  .. _figure_hw_6:
+
+  .. figure:: /asserts/medias/hw_fig6.jpg
+     :width: 500
+     :alt: hw_fig6
+
+     Download the on-board debugger’s Driver for Windows
+
+
 More Info 
 ---------
 
