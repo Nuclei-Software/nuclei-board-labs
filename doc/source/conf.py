@@ -97,7 +97,7 @@ rst_epilog = """
 .. |nmsis_core_defines| replace:: **NUCLEI_N200**, **NUCLEI_N300**, **NUCLEI_N600** or **NUCLEI_NX600**
 .. |nuclei_board| replace:: Nuclei Development Board
 .. |nuclei_sdk| replace:: Nuclei SDK
-.. |rv_star| replace:: RV-STAR Development Kit
+.. |rv_star| replace:: RV-STAR Development Board
 .. |ses| replace:: Segger Embedded Studio
 .. |gd_mcu| replace:: GDVF103 MCU
 """

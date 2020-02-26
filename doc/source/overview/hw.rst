@@ -9,7 +9,7 @@ The following |nuclei_core| based hardware platforms (more boards will be added 
 |rv_star| 
 #########
 
-RV-STAR is a RISC-V development board based on GD32VF103 MCU. It provides on-board debugger, reset and wake-up user keys, RGB LED, USB OTG, and EXMC, Arduino and PMOD extension interfaces and other resources.
+RV-STAR is a RISC-V development board based on GD32VF103 MCU. It provides on-board debugger, reset and wake-up user keys, RGB LED, USB OTG, and EXMC, Arduino, PMOD extension interfaces and other resources.
 
 .. _figure_hw_1:
 
@@ -37,7 +37,7 @@ Features and Specifications
   |                      +-------------------+-------------------------------------------------------------------+
   |                      | Operating Voltage |  2.6 ~ 3.6V                                                       |
   |                      +-------------------+-------------------------------------------------------------------+
-  |                      | Peripheral        |  Timer(Advanced timer * 1, General timer * 4)                     |
+  |                      | Peripheral        |  Timer(Advanced 16-bit timer * 1, General 16-bit timer * 4)       |
   |                      |                   +-------------------------------------------------------------------+
   |                      |                   |  U(S)ART * 5, I2C * 2, SPI * 3, CAN * 2, USBFS * 1, EXMC * 1      |
   |                      |                   +-------------------------------------------------------------------+
@@ -70,18 +70,18 @@ Features and Specifications
 
 .. note::
     |rv_star| supports multiple power supply inputs, it allows multiple power supply to be connected at the same time when the jumper is connected properly.
-    About the jumper connection, please refer to :ref:`Jumper <jumper>`.
+    About the jumper connection, please refer to :ref:`Jumper Section <jumper>`.
 
-    The Micro USB supports bi-directional power supply, and the default is input. In the case of using Micro USB as the single power supply, please pull down the VBUS_OE# signal (MCU PD3 pin) to fully turn on the MOSFET (Q1) to ensure good power supply.
+    The Micro USB port supports bi-directional power supply, and the default is input. In the case of using Micro USB as the single power supply, please pull down the VBUS_OE# signal (MCU PD3 pin) to fully turn on the MOSFET (Q1) to ensure good power supply.
 
 
 Extension Interface
 -------------------
 
 **Double row 2.54mm female header**
-  The outside of P3~p6 is Arduino-Compatible interface, which can be directly connected to the relevant expansion boards of Arduino interface.
+  The outside of P3~P6 is Arduino-Compatible interface, which can be directly connected to the relevant expansion boards with Arduino interface.
 
-  The corresponding MCU pins and function descriptions of the signals on the P3-P6 are listed below.
+  The corresponding MCU pins and function descriptions of the signals on the P3~P6 are listed below.
 
 .. _figure_hw_2:
 
@@ -211,7 +211,7 @@ Extension Interface
   |           +----------+------------+---------+------------------+-------------------------------------------------+
   | EXMC      | 9        | EXMC_D13   | 55      | PD8              | EXMC_D13, USART2_TX                             |
   |           +----------+------------+---------+------------------+-------------------------------------------------+
-  |           | 11       | EXMC_D12   | 46      | PE15             | EXMC_D12,TIMER0_BRKIN                           |
+  |           | 11       | EXMC_D12   | 46      | PE15             | EXMC_D12, TIMER0_BRKIN                          |
   +-----------+----------+------------+---------+------------------+-------------------------------------------------+ 
 
 
@@ -259,7 +259,7 @@ Extension Interface
 
 
 **PMOD**
-  The |rv_star| provides two sets of standard PMOD interfaces, which can be conveniently connected to the relevant expansion boards of PMOD interface.
+  The |rv_star| provides two sets of standard PMOD interfaces, which can be conveniently connected to the relevant expansion boards with PMOD interface.
 
   The corresponding MCU pins and function descriptions of the signals on the PMOD1, PMOD2 are listed below.
 
@@ -290,7 +290,7 @@ Extension Interface
   |           +----------+------------+---------+------------------+-------------------------------------------------+
   |           | 6        | 3V3        | /       | 3V3 Power Output | /                                               |
   |    I2C    +----------+------------+---------+------------------+-------------------------------------------------+
-  |           | 7        | PB4/NJTRST | 90      | PA7              | SPI2_MISO, TIMER2_CH0, PB4, SPI0_MISO           |
+  |           | 7        | PB4/NJTRST | 90      | NJTRST           | SPI2_MISO, TIMER2_CH0, PB4, SPI0_MISO           |
   |           +----------+------------+---------+------------------+-------------------------------------------------+
   |           | 8        | PB2/BOOT1  | 37      | PB2/BOOT1        | Can be used as GPIO after boot                  |
   |           +----------+------------+---------+------------------+-------------------------------------------------+

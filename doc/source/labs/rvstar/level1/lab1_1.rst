@@ -23,13 +23,13 @@ The following hardware and source codes are required:
 - Based on |nuclei_sdk| and |ses| individually, program the GPIO to control some on-board peripherals and send message to PC through UART then printf that in the terminal.
 
 .. note::
-    About the detailed usage of |nuclei_sdk|, please refer to `How to develop with NUclei SDK <http://doc.nucleisys.com/nuclei_sdk/quickstart.html>`__; 
+    About the detailed usage of |nuclei_sdk|, please refer to `How to develop with Nuclei SDK <http://doc.nucleisys.com/nuclei_sdk/quickstart.html>`__; 
     About the detailed usage of |ses|, please refer to `How to develop with Segger Embedded Studio <http://www.riscv-mcu.com/quickstart-quickstart.html>`__  
     
     
 **Principles**
 
-About the brief introduction of |rv_star|, please refer to this `online docs <http://www.riscv-mcu.com/quickstart-quickstart.html>`_.
+About the brief introduction of |rv_star|, please refer to this :ref:`online docs <hw_platform>`.
 
 .. _figure_lab1_1_1:
 

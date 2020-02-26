@@ -95,7 +95,7 @@ Quick Start
 ###########
 
 Develop with |nuclei_sdk|
-***********************
+*************************
 
 |nuclei_sdk| includes Makefile, so you can develop your |nuclei_board| by using command line mode. There are scripts in it that you need to set up your development environment.
 
