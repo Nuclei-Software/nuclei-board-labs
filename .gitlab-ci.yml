@@ -13,6 +13,11 @@ stages:
 deploy_doc:
     stage: release
     retry: 1
+    only:
+        refs:
+          - master
+        changes:
+          - doc/source/**/**/**/**/*
     artifacts:
         name: "nuclei_board_labs_doc-${CI_COMMIT_SHA::8}"
         paths:
@@ -34,17 +39,19 @@ deploy_doc:
         - cp build/latex/*.pdf build/html/
     tags:
         - software-server
-    only:
-        - master
 
 deploy_website:
     stage: deploy
+    when: on_success
+    only:
+        refs:
+          - master
+        changes:
+          - doc/source/**/**/**/**/*
     retry: 1
     script:
         - ./.ci/ftp_deploy.sh $FTPUSER $FTPPWD $FTPSERVER doc/build/html nuclei_board_labs
     tags:
         - software-server
-    only:
-        - master
     dependencies:
         - deploy_doc
