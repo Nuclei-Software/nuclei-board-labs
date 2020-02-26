@@ -365,25 +365,25 @@ The jumpers on RV-STAR are shown in the figure below, and their functions are de
   +---------+----------------------+------------+---------+----------------------------------------------------------+ 
   | Jumper  | Description          | Options    | Default | Function                                                 |
   +---------+----------------------+------------+---------+----------------------------------------------------------+
-  |         | GND                  | 2-1        | √       | Used to connect debugger and MCU. Contains standard      |
+  |         | GND                  | 2-1        | **O**   | Used to connect debugger and MCU. Contains standard      |
   |         +----------------------+------------+---------+                                                          |
-  |         | JTAG-TCK             | 4-3        | √       | 4-wire JTAG and 2-wire UART interface. Disconnect here   |
+  |         | JTAG-TCK             | 4-3        | **O**   | 4-wire JTAG and 2-wire UART interface. Disconnect here   |
   |         +----------------------+------------+---------+                                                          |
-  |         | JTAG-TDI             | 6-5        | √       | can separate MCU and debugger to make them work          |
+  |         | JTAG-TDI             | 6-5        | **O**   | can separate MCU and debugger to make them work          |
   |         +----------------------+------------+---------+                                                          |
-  |         | JTAG-TDO             | 8-7        | √       | independently. (The debugger can be used to debug other  |
+  |         | JTAG-TDO             | 8-7        | **O**   | independently. (The debugger can be used to debug other  |
   |         +----------------------+------------+---------+                                                          |
-  |    P1   | JTAG-TMS             | 10-9       | √       | devices, and the MCU can be debugged by other debuggers) |
+  |    P1   | JTAG-TMS             | 10-9       | **O**   | devices, and the MCU can be debugged by other debuggers) |
   |         +----------------------+------------+---------+                                                          |
-  |         | Reset                | 12-11      | √       |                                                          |
+  |         | Reset                | 12-11      | **O**   |                                                          |
   |         +----------------------+------------+---------+                                                          |
-  |         | UART-TX              | 14-13      | √       |                                                          |
+  |         | UART-TX              | 14-13      | **O**   |                                                          |
   |         +----------------------+------------+---------+                                                          |
-  |         | UART-RX              | 16-15      | √       |                                                          |
+  |         | UART-RX              | 16-15      | **O**   |                                                          |
   |         +----------------------+------------+---------+                                                          |
-  |         | VDE-3V3              | 18-17      | √       |                                                          |
+  |         | VDE-3V3              | 18-17      | **O**   |                                                          |
   +---------+----------------------+------------+---------+----------------------------------------------------------+
-  |         | BOOT0                | 4-6        | √       |                                                          |
+  |         | BOOT0                | 4-6        | **O**   |                                                          |
   |         |                      |            |         | Boot from flash                                          |
   |         |                      | L          |         |                                                          |
   |         |                      +------------+---------+----------------------------------------------------------+
@@ -391,7 +391,7 @@ The jumpers on RV-STAR are shown in the figure below, and their functions are de
   |         |                      |            |         |                                                          |
   |         | (need to choose one) | H          |         |                                                          |
   |    P2   +----------------------+------------+---------+----------------------------------------------------------+
-  |         | BOOT1                | 3-5        | √       |                                                          |
+  |         | BOOT1                | 3-5        | **O**   |                                                          |
   |         |                      |            |         | If BOOT0=1, boot from Bootloader                         |
   |         |                      | L          |         |                                                          |
   |         |                      +------------+---------+----------------------------------------------------------+
@@ -399,7 +399,7 @@ The jumpers on RV-STAR are shown in the figure below, and their functions are de
   |         |                      |            |         | If BOOT0=1, boot from SRAM                               |
   |         |                      | H          |         |                                                          |
   +---------+----------------------+------------+---------+----------------------------------------------------------+
-  |         | RTC Power Supply     | 2-1        | √       |                                                          |
+  |         | RTC Power Supply     | 2-1        | **O**   |                                                          |
   |         |                      |            |         | From 3V3 power source on-board                           |
   |         |                      | 3V3        |         |                                                          |
   |    P7   |                      +------------+---------+----------------------------------------------------------+
@@ -411,11 +411,13 @@ The jumpers on RV-STAR are shown in the figure below, and their functions are de
   |         |                      |            |         |                                                          |
   |         |                      | VIN        |         | If choose this, Arduino Vin should be 5V0                |
   |    P10  |                      +------------+---------+----------------------------------------------------------+
-  |         |                      | 2-3        | √       |                                                          |
+  |         |                      | 2-3        | **O**   |                                                          |
   |         |                      |            |         | From USB Type-C                                          |
   |         |                      | VBUS       |         |                                                          |
   +---------+----------------------+------------+---------+----------------------------------------------------------+
 
+.. note::
+    Symbol "**O**" in the up table means connected.
 
 
 More Info 
