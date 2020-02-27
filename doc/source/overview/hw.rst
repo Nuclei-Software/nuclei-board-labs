@@ -500,7 +500,7 @@ On-board Debugger Driver
   .. _figure_hw_6:
 
   .. figure:: /asserts/medias/hw_fig6.jpg
-     :width: 500
+     :width: 800
      :alt: hw_fig6
 
      Download the on-board debugger’s Driver for Windows
@@ -509,4 +509,23 @@ On-board Debugger Driver
 More Info 
 ---------
 
-If you want to get more info about |rv_star|, please refer to its schematic.
+If you want to get more info about |rv_star|, |gd_mcu| and Nuclei Bumblebee Processor Core, please click the link in the following table to get the corresponding online docs.
+
+.. _table_hw_9:
+
+.. table:: Online reference documents
+   :widths: 60,120
+
+   +-------------------------+----------------------------------------------------------------------------------+
+   |        Item             |    Online Docs                                                                   |
+   +-------------------------+----------------------------------------------------------------------------------+
+   | |rv_star|               |   `Schematic <https://www.rvmcu.com/quickstart-quickstart.html>`_                |
+   +-------------------------+----------------------------------------------------------------------------------+
+   | |gd_mcu|                |   `User Manual <https://www.rvmcu.com/quickstart-quickstart.html>`_              |
+   |                         +----------------------------------------------------------------------------------+
+   |                         |   `Datasheet <https://www.rvmcu.com/quickstart-quickstart.html>`_                |
+   +-------------------------+----------------------------------------------------------------------------------+
+   | Nuclei Bumblebee        |   `ISA Manual <https://www.rvmcu.com/quickstart-quickstart.html>`_               |
+   |                         +----------------------------------------------------------------------------------+
+   | Processor Core          |   `Datasheet <https://www.rvmcu.com/quickstart-quickstart.html>`_                |
+   +-------------------------+----------------------------------------------------------------------------------+

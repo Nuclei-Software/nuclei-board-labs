@@ -99,7 +99,7 @@ rst_epilog = """
 .. |nuclei_sdk| replace:: Nuclei SDK
 .. |rv_star| replace:: RV-STAR Development Board
 .. |ses| replace:: Segger Embedded Studio
-.. |gd_mcu| replace:: GDVF103 MCU
+.. |gd_mcu| replace:: GD32VF103 MCU
 """
 # -- Extension configuration -------------------------------------------------
 
