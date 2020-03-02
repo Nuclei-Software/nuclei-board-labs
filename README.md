@@ -9,7 +9,7 @@ Anyone interested in Nuclei Processor Cores can also take this handbook as a qui
 
 The hierarchy of Nuclei Board Labs are shown in the block diagram below.
 
-![Hierarchy of Nuclei Board Labs](source/asserts/medias/overview_fig1.jpg)
+![Hierarchy of Nuclei Board Labs](doc/source/asserts/medias/overview_fig1.jpg)
 
 The labs are developed based on the [Nuclei Software Development Kit (Nuclei SDK)](https://github.com/Nuclei-Software/nuclei-sdk) which is an open software platform to facilitate the software development of systems based on Nuclei Processor Cores.
 
