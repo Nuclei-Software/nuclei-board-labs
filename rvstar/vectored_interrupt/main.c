@@ -35,7 +35,7 @@ int main(void)
     /* ECLIC config */
     returnCode = ECLIC_Register_IRQ(EXTI0_IRQn, ECLIC_NON_VECTOR_INTERRUPT,
                     ECLIC_LEVEL_TRIGGER, exti_intlevel, 0, EXTI0_IRQHandler);
-    returnCode = ECLIC_Register_IRQ(TIMER1_IRQn, ECLIC_NON_VECTOR_INTERRUPT,
+    returnCode = ECLIC_Register_IRQ(TIMER1_IRQn, ECLIC_VECTOR_INTERRUPT,
                     ECLIC_LEVEL_TRIGGER, timer_intlevel, 0, TIMER1_IRQHandler);
 
     /* Enable interrupts in general */
@@ -143,9 +143,12 @@ void EXTI0_IRQHandler()
     \param[out] none
     \retval     none
   */
-void TIMER1_IRQHandler()
+__INTERRUPT void TIMER1_IRQHandler()
 {
     uint16_t cnt;
+
+    // save CSR context
+    SAVE_IRQ_CSR_CONTEXT();
 
     if(SET == timer_interrupt_flag_get(TIMER1, TIMER_INT_FLAG_UP)){
         /* clear update interrupt bit */
@@ -159,7 +162,9 @@ void TIMER1_IRQHandler()
     		gd_rvstar_led_on(LED1);
     		delay_1ms(1000);
     	}
-
     }
+
+    // restore CSR context
+    RESTORE_IRQ_CSR_CONTEXT();
 }
 

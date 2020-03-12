@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 void key_exti_init(void);
-#define ECLIC_PRIGROUP_LEVEL3_PRIO1        3 
+void EXTI0_IRQHandler(void);
 
 /**
     \brief      main function
@@ -13,6 +13,8 @@ void key_exti_init(void);
 */
 int main(void)
 {
+    int32_t returnCode;
+    
     /* Board Config */
     gd_rvstar_led_init(LED3);
     gd_rvstar_key_init(WAKEUP_KEY_GPIO_PORT,KEY_MODE_EXTI);
@@ -21,13 +23,14 @@ int main(void)
     key_exti_init();
 
     /* ECLIC config */
-    __RV_CSR_SET(mstatus, MSTATUS_MIE);
-    ECLIC_SetCfgNlbits(ECLIC_PRIGROUP_LEVEL3_PRIO1);
-    ECLIC_EnableIRQ(EXTI0_IRQn);
-    ECLIC_SetPriorityIRQ(EXTI0_IRQn,1);
-    ECLIC_SetLevelIRQ(EXTI0_IRQn,1);
+    returnCode = ECLIC_Register_IRQ(EXTI0_IRQn, ECLIC_NON_VECTOR_INTERRUPT,
+                    ECLIC_LEVEL_TRIGGER, 1, 0, EXTI0_IRQHandler);
+
+    /* Enable interrupts in general */
+    __enable_irq();
 
     while(1); 
+    return 0;
 }
 
 /**
@@ -60,8 +63,8 @@ void EXTI0_IRQHandler(void)
     if (RESET != exti_interrupt_flag_get(WAKEUP_KEY_PIN)){
 
         if(RESET == gd_rvstar_key_state_get(KEY_WAKEUP)){
-        	/* toggle RED led */
-        	gd_rvstar_led_toggle(LED3);
+            /* toggle RED led */
+            gd_rvstar_led_toggle(LED3);
         }
     }
     /* clear EXTI lines pending flag */
