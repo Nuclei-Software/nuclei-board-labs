@@ -5,6 +5,8 @@ Get Started
 
 This section lists the needed development tools, Software source codes, and then describes how to get started with Nuclei board development.
 
+.. _tool_req:
+
 Tools Requirement
 #################
 * `Nuclei Development Tools <https://www.nucleisys.com/download.php>`_
@@ -17,7 +19,7 @@ Tools Requirement
 
 * `Segger Embedded Studio <https://www.segger.com/downloads/embedded-studio/>`_  is a complete all-in-one solution for managing, building, testing, and deploying your embedded applications which support RISC-V processors, it provides a GUI based development environment.
 
-* `Tera Term <http://ttssh2.osdn.jp/>`_ or `PuTTY <https://www.putty.org/>`_ for serial terminal connection. The serial configurations are 115200 baud, 8 bits data, 1 stop bit, and no parity (115200-8-N-1) by default.
+* `Tera Term <http://ttssh2.osdn.jp/>`_ or `PuTTY <https://www.putty.org/>`_ for serial terminal connection. The serial configurations are 115200 baud, 8 bits data, no parity, and 1 stop bit (115200-8-N-1) by default.
 
 
 Software Source Codes 

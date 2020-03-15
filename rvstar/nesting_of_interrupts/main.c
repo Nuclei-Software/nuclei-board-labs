@@ -4,8 +4,6 @@
 
 void user_key_exti_config();
 void soc_timer_config();
-void EXTI0_IRQHandler();
-void TIMER1_IRQHandler();
 
 /**
     \brief      main function
@@ -34,9 +32,9 @@ int main(void)
 
     /* ECLIC config */
     returnCode = ECLIC_Register_IRQ(EXTI0_IRQn, ECLIC_NON_VECTOR_INTERRUPT,
-                    ECLIC_LEVEL_TRIGGER, exti_intlevel, 0, EXTI0_IRQHandler);
+                    ECLIC_LEVEL_TRIGGER, exti_intlevel, 0, NULL);
     returnCode = ECLIC_Register_IRQ(TIMER1_IRQn, ECLIC_NON_VECTOR_INTERRUPT,
-                    ECLIC_LEVEL_TRIGGER, timer_intlevel, 0, TIMER1_IRQHandler);
+                    ECLIC_LEVEL_TRIGGER, timer_intlevel, 0, NULL);
 
     /* Enable interrupts in general */
     __enable_irq();
@@ -53,6 +51,7 @@ int main(void)
     	gd_rvstar_led_on(LED3);
     }
 
+    return 0;
 }
 
 
@@ -64,13 +63,13 @@ int main(void)
   */
 void soc_timer_config()
 {
+    timer_parameter_struct timer_initpara;
+
     /* ----------------------------------------------------------------------------
     TIMER1 Configuration:
     TIMER1CLK = SystemCoreClock/54000 = 2KHz.
+    TIMER1CAR = 20000
     ---------------------------------------------------------------------------- */
-    timer_oc_parameter_struct timer_ocinitpara;
-    timer_parameter_struct timer_initpara;
-
     rcu_periph_clock_enable(RCU_TIMER1);
 
     timer_deinit(TIMER1);

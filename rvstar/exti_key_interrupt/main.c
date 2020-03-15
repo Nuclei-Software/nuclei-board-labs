@@ -3,7 +3,6 @@
 #include <stdio.h>
 
 void key_exti_init(void);
-void EXTI0_IRQHandler(void);
 
 /**
     \brief      main function
@@ -24,7 +23,7 @@ int main(void)
 
     /* ECLIC config */
     returnCode = ECLIC_Register_IRQ(EXTI0_IRQn, ECLIC_NON_VECTOR_INTERRUPT,
-                    ECLIC_LEVEL_TRIGGER, 1, 0, EXTI0_IRQHandler);
+                    ECLIC_LEVEL_TRIGGER, 1, 0, NULL);
 
     /* Enable interrupts in general */
     __enable_irq();

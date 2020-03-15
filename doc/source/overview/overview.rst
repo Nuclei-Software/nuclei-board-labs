@@ -1,8 +1,8 @@
-.. _introduction:
+.. _overview:
 
 
-Introduction
-============
+Overview
+========
 
 This is a handbook for Nuclei Board Labs which is a part of courses in Nuclei University Program. 
 This handbook describes how to develop with |nuclei_board| through a step-by-step way, it can be used as lab teaching metarials. 

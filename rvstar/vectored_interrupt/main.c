@@ -4,8 +4,6 @@
 
 void user_key_exti_config();
 void soc_timer_config();
-void EXTI0_IRQHandler();
-void TIMER1_IRQHandler();
 
 /**
     \brief      main function
@@ -15,8 +13,9 @@ void TIMER1_IRQHandler();
   */
 int main(void)
 {
-    uint8_t timer_intlevel=1;
-    uint8_t exti_intlevel =2;
+    uint8_t timer1_intlevel=1;
+    uint8_t timer2_intlevel=2;
+    uint8_t exti_intlevel  =3;
     int32_t returnCode;
 
     /* Board Config */
@@ -34,15 +33,19 @@ int main(void)
 
     /* ECLIC config */
     returnCode = ECLIC_Register_IRQ(EXTI0_IRQn, ECLIC_NON_VECTOR_INTERRUPT,
-                    ECLIC_LEVEL_TRIGGER, exti_intlevel, 0, EXTI0_IRQHandler);
+                    ECLIC_LEVEL_TRIGGER, exti_intlevel, 0, NULL);
+    returnCode = ECLIC_Register_IRQ(TIMER2_IRQn, ECLIC_VECTOR_INTERRUPT,
+                    ECLIC_LEVEL_TRIGGER, timer2_intlevel, 0, NULL);
     returnCode = ECLIC_Register_IRQ(TIMER1_IRQn, ECLIC_VECTOR_INTERRUPT,
-                    ECLIC_LEVEL_TRIGGER, timer_intlevel, 0, TIMER1_IRQHandler);
+                    ECLIC_LEVEL_TRIGGER, timer1_intlevel, 0, NULL);
 
     /* Enable interrupts in general */
     __enable_irq();
 
     /* Timer Start */
     timer_enable(TIMER1);
+    delay_1ms(1000);
+    timer_enable(TIMER2);
 
     /* RGB Control */
     while(1)
@@ -53,6 +56,7 @@ int main(void)
     	gd_rvstar_led_on(LED3);
     }
 
+    return 0;
 }
 
 
@@ -64,13 +68,13 @@ int main(void)
   */
 void soc_timer_config()
 {
+    timer_parameter_struct timer_initpara;  
+    
     /* ----------------------------------------------------------------------------
     TIMER1 Configuration:
     TIMER1CLK = SystemCoreClock/54000 = 2KHz.
+    TIMER1CAR = 20000
     ---------------------------------------------------------------------------- */
-    timer_oc_parameter_struct timer_ocinitpara;
-    timer_parameter_struct timer_initpara;
-
     rcu_periph_clock_enable(RCU_TIMER1);
 
     timer_deinit(TIMER1);
@@ -89,6 +93,21 @@ void soc_timer_config()
 
     timer_interrupt_enable(TIMER1, TIMER_INT_UP);
 
+    /* ----------------------------------------------------------------------------
+    TIMER2 Configuration:
+    TIMER2CLK = SystemCoreClock/54000 = 2KHz.
+    TIMER2CAR = 20000
+    ---------------------------------------------------------------------------- */
+    rcu_periph_clock_enable(RCU_TIMER2);
+
+    timer_deinit(TIMER2);
+
+    timer_update_source_config(TIMER2, TIMER_UPDATE_SRC_REGULAR);
+
+    /* TIMER2 configuration */
+    timer_init(TIMER2, &timer_initpara);
+
+    timer_interrupt_enable(TIMER2, TIMER_INT_UP);
 }
 
 
@@ -127,10 +146,11 @@ void EXTI0_IRQHandler()
             /* clear EXTI lines interrupt flag */
             exti_interrupt_flag_clear(WAKEUP_KEY_PIN);
 
-            /* set led to BLUE */
-            gd_rvstar_led_off(LED3);
-            gd_rvstar_led_off(LED1);
+            /* set led to White */
+            gd_rvstar_led_on(LED3);
             gd_rvstar_led_on(LED2);
+            gd_rvstar_led_on(LED1);            
+
             delay_1ms(1000);
         }
     }
@@ -168,3 +188,23 @@ __INTERRUPT void TIMER1_IRQHandler()
     RESTORE_IRQ_CSR_CONTEXT();
 }
 
+
+/**
+    \brief      TIMER2 interrupt service routine
+    \param[in]  none
+    \param[out] none
+    \retval     none
+  */
+__INTERRUPT void TIMER2_IRQHandler()
+{
+    if(SET == timer_interrupt_flag_get(TIMER2, TIMER_INT_FLAG_UP)){
+        /* clear update interrupt bit */
+        timer_interrupt_flag_clear(TIMER2, TIMER_INT_FLAG_UP);
+
+        /* set led to BLUE */
+        gd_rvstar_led_off(LED3);
+        gd_rvstar_led_off(LED1);
+        gd_rvstar_led_on(LED2);
+        delay_1ms(2000);
+    }
+}

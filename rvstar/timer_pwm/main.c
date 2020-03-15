@@ -43,6 +43,8 @@ int main(void)
     	    delay_1ms(5);
         }
     }
+
+    return 0;
 }
 
 /**

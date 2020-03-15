@@ -3,7 +3,9 @@
 Changelog
 =========
 
-V0.0.1
+V0.1.0
 ------
+
+First version of Nuclei Board Labs.
 
 
