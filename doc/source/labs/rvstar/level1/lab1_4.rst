@@ -92,7 +92,7 @@ The program flow is shown below:
 .. note::
    When connect your board with the PC, just keep the on-board jumpers as default. About on-board jumpers' function, please refer to :ref:`Jumper Section <jumper>`.
 
-2. Compile and run the ``nuclei-sdk/board-labs/rvstar/nesting_of_interrupts`` example.
+2. Compile and run the ``nuclei-sdk/board-labs/rvstar/nesting_of_interrupts`` example. About the develop environment, you can choose |nuclei_sdk| or |ses|.
 
 * |nuclei_sdk|
 
@@ -102,6 +102,11 @@ The program flow is shown below:
 
        cd /nuclei-sdk/board-labs/rvstar/nesting_of_interrupts
        make SOC=gd32vf103 BOARD=gd32vf103v_rvstar upload
+
+    .. note::
+        a. About the acquisition of source codes, please refer to :ref:`Software Source Codes <sw_code>`.
+
+        b. About the detailed usage of |nuclei_sdk|, please refer to `How to develop with Nuclei SDK <http://doc.nucleisys.com/nuclei_sdk/quickstart.html>`_.       
 
 * |ses|
 
@@ -114,6 +119,11 @@ The program flow is shown below:
        :alt: lab1_4_fig4
 
        Operations in Embedded Studio
+
+    .. note::
+        a. About the acquisition of |ses| solutions, please refer to :ref:`Software Source Codes <sw_code>`.
+
+        b. About the detailed usage of |ses|, please refer to `How to develop with Segger Embedded Studio <https://www.riscv-mcu.com/quickstart-quickstart-index-u-RV_STAR_PROJECT.html>`_.       
 
 3. Check the status of on-board RGB LED, then press the on-board User Key(PA0-WKUP), and check the status of on-board RGB LED again.
 

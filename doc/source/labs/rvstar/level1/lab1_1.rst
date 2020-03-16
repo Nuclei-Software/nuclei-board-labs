@@ -21,11 +21,7 @@ The following hardware and source codes are required:
 
 - A brief introduction of Nuclei board and on-board peripherals.
 - Based on |nuclei_sdk| and |ses| individually, program the GPIO to control some on-board peripherals and send message to PC through UART then printf that in the terminal.
-
-.. note::
-    About the detailed usage of |nuclei_sdk|, please refer to `How to develop with Nuclei SDK <http://doc.nucleisys.com/nuclei_sdk/quickstart.html>`__; 
-    About the detailed usage of |ses|, please refer to `How to develop with Segger Embedded Studio <http://www.riscv-mcu.com/quickstart-quickstart.html>`__  
-    
+     
     
 **Principles**
 
@@ -65,7 +61,7 @@ In the code, the number of on-board User Key(PA0-WKUP) pressed is counted, the s
 
     b. The UART terminal configurations are 115200 baud, 8 bits data, no parity, and 1 stop bit (115200-8-N-1), and the COM port number can be get from device manager on the computer. About recommanded UART terminal tools, please refer to :ref:`Tools Requirement Section <tool_req>`.
 
-2. Compile and run the ``nuclei-sdk/board-labs/rvstar/running_led`` example.
+2. Compile and run the ``nuclei-sdk/board-labs/rvstar/running_led`` example. About the develop environment, you can choose |nuclei_sdk| or |ses|.
 
 * |nuclei_sdk|
 
@@ -75,6 +71,12 @@ In the code, the number of on-board User Key(PA0-WKUP) pressed is counted, the s
 
        cd /nuclei-sdk/board-labs/rvstar/running_led
        make SOC=gd32vf103 BOARD=gd32vf103v_rvstar upload
+
+    .. note::
+        a. About the acquisition of source codes, please refer to :ref:`Software Source Codes <sw_code>`.
+
+        b. About the detailed usage of |nuclei_sdk|, please refer to `How to develop with Nuclei SDK <http://doc.nucleisys.com/nuclei_sdk/quickstart.html>`_.
+
 
 * |ses|
 
@@ -87,6 +89,11 @@ In the code, the number of on-board User Key(PA0-WKUP) pressed is counted, the s
        :alt: lab1_1_fig3
 
        Operations in Embedded Studio
+
+    .. note::
+        a. About the acquisition of |ses| solutions, please refer to :ref:`Software Source Codes <sw_code>`.
+
+        b. About the detailed usage of |ses|, please refer to `How to develop with Segger Embedded Studio <https://www.riscv-mcu.com/quickstart-quickstart-index-u-RV_STAR_PROJECT.html>`_. 
 
 3. Press the on-board User Key(PA0-WKUP), then check the result in UART terminal, and watch the changes of on-board RGB LED.
 

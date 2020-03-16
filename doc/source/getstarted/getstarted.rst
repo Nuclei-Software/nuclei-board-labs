@@ -22,6 +22,8 @@ Tools Requirement
 * `Tera Term <http://ttssh2.osdn.jp/>`_ or `PuTTY <https://www.putty.org/>`_ for serial terminal connection. The serial configurations are 115200 baud, 8 bits data, no parity, and 1 stop bit (115200-8-N-1) by default.
 
 
+.. _sw_code:
+
 Software Source Codes 
 #####################
 
@@ -108,5 +110,5 @@ Develop with |ses|
 
 |ses| is a powerful C/C++ IDE (Integrated Development Environment) for embedded systems, you can work with it to develop your |nuclei_board| atfer environment setting manually. 
 
-How to develop with |ses| step by step, please see this `online docs <http://www.riscv-mcu.com/quickstart-quickstart.html>`__.
+How to develop with |ses| step by step, please see this `online docs <https://www.riscv-mcu.com/quickstart-quickstart-index-u-RV_STAR_PROJECT.html>`__.
 

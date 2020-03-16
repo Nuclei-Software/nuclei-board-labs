@@ -68,7 +68,7 @@ It can be divided into 3 parts:
 .. note::
    When connect your board with the PC, just keep the on-board jumpers as default. About on-board jumpers' function, please refer to :ref:`Jumper Section <jumper>`.
 
-2. Compile and run the ``nuclei-sdk/board-labs/rvstar/timer_pwm`` example.
+2. Compile and run the ``nuclei-sdk/board-labs/rvstar/timer_pwm`` example. About the develop environment, you can choose |nuclei_sdk| or |ses|.
 
 * |nuclei_sdk|
 
@@ -78,6 +78,11 @@ It can be divided into 3 parts:
 
        cd /nuclei-sdk/board-labs/rvstar/timer_pwm
        make SOC=gd32vf103 BOARD=gd32vf103v_rvstar upload
+
+    .. note::
+        a. About the acquisition of source codes, please refer to :ref:`Software Source Codes <sw_code>`.
+
+        b. About the detailed usage of |nuclei_sdk|, please refer to `How to develop with Nuclei SDK <http://doc.nucleisys.com/nuclei_sdk/quickstart.html>`_.       
 
 * |ses|
 
@@ -90,6 +95,11 @@ It can be divided into 3 parts:
        :alt: lab1_2_fig3
 
        Operations in Embedded Studio
+
+    .. note::
+        a. About the acquisition of |ses| solutions, please refer to :ref:`Software Source Codes <sw_code>`.
+
+        b. About the detailed usage of |ses|, please refer to `How to develop with Segger Embedded Studio <https://www.riscv-mcu.com/quickstart-quickstart-index-u-RV_STAR_PROJECT.html>`_.       
 
 3. Check the color change of on-board RGB LED.
 
