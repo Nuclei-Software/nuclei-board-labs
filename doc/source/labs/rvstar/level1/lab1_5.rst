@@ -33,7 +33,20 @@ The following hardware and source codes are required:
     
 **Principles**
 
-The vectored processing mode does not support interrupt preemption by default. In order to support vectored interrupt preemption, a special stack-push operation is necessary at the beginning of the interrupt service routine. The detailed processing flow is shown in the figure below.
+For an interrupt service routine of a vectored interrupt, the indication ``__attribute__ ((interrupt))`` is required to indicate compiler this C function is an interrupt service routine, as the figure below shown. ``__attribute__ ((interrupt))`` is defined as ``__INTERRUPT`` in NMSIS, see the example in :ref:`appendix <appendix_lab1_5>`.
+
+.. note::
+  **Explanation**:
+  In the vector processing mode, since the core does not save the context before jumping to the interrupt service routine, theoretically the interrupt handler cannot call any sub-function which means the handler must be a leaf function.
+  As long as the ``__attribute__ ((interrupt))`` is used to indicate this function is an interrupt handler, the compiler will automatically detect whether this function calls any sub-function. If it calls any sub-function, the compiler will automatically insert a piece of code to save the context. 
+
+For an interrupt service routine of a vectored interrupt which needs to support interrupt preemption, it should save related CSR registers and enable global interrupt in the beginning, and disable global interrupt and restore related CSR registers in the ending, as the figure below shown. These opreations are defined as ``SAVE_IRQ_CSR_CONTEXT()`` and ``RESTORE_IRQ_CSR_CONTEXT()`` in NMSIS, see the example in :ref:`appendix <appendix_lab1_5>`.
+
+.. note::
+  **Explanation**:
+  If the interrupt is set to vectored processing mode, once it's taken, the processor core will jump to the target address saved in the Vector Table Entry directly, which is the corresponding interrupt service routine of the interrupt. The processor core doesn't perform any special operation before jumping to the interrupt service routine, and the value of *mstatus.MIE* is updated to 0 by the hardware, which means the interrupt is global disabled and no new interrupt will be taken once the core is handling the interrupt.   
+
+For non-vectored interrupt, it support interrupt preemption by default, so its interrupt service routine does not need ``__INTERRUPT`` , ``SAVE_IRQ_CSR_CONTEXT()`` and ``RESTORE_IRQ_CSR_CONTEXT()`` these operations. About the detailed processing flow and description, refer to :ref:`Core feature: Interrupt <lab1_3>` and :ref:`Core feature: Nesting of Interrupts <lab1_4>`.
 
 .. _figure_lab1_5_1:
 
@@ -42,22 +55,6 @@ The vectored processing mode does not support interrupt preemption by default. I
    :alt: lab1_5_fig1
 
    Example for vectored interrupt supported preemption
-
-
-.. note::
-    
-    a. For an interrupt service routine of a vectored interrupt, the indication ``__attribute__ ((interrupt))`` is required to indicate compiler this C function is an interrupt service routine, as the figure above shown. ``__attribute__ ((interrupt))`` is defined as ``__INTERRUPT`` in NMSIS, see the example in :ref:`appendix <appendix_lab1_5>`.
-
-      **Explanation**:
-      In the vector processing mode, since the core does not save the context before jumping to the interrupt service routine, theoretically the interrupt handler cannot call any sub-function which means the handler must be a leaf function.
-      As long as the ``__attribute__ ((interrupt))`` is used to indicate this function is an interrupt handler, the compiler will automatically detect whether this function calls any sub-function. If it calls any sub-function, the compiler will automatically insert a piece of code to save the context. 
-
-    b. For an interrupt service routine of a vectored interrupt which needs to support interrupt preemption, it should save related CSR registers and enable global interrupt in the beginning, and disable global interrupt and restore related CSR registers in the ending, as the figure above shown. These opreations are defined as ``SAVE_IRQ_CSR_CONTEXT()`` and ``RESTORE_IRQ_CSR_CONTEXT()`` in NMSIS, see the example in :ref:`appendix <appendix_lab1_5>`.
-
-      **Explanation**:
-      If the interrupt is set to vectored processing mode, once it's taken, the processor core will jump to the target address saved in the Vector Table Entry directly, which is the corresponding interrupt service routine of the interrupt. The processor core doesn't perform any special operation before jumping to the interrupt service routine, and the value of *mstatus.MIE* is updated to 0 by the hardware, which means the interrupt is global disabled and no new interrupt will be taken once the core is handling the interrupt.   
-
-    c. For non-vectored interrupt, it support interrupt preemption by default, so its interrupt service routine does not need ``__INTERRUPT`` , ``SAVE_IRQ_CSR_CONTEXT()`` and ``RESTORE_IRQ_CSR_CONTEXT()`` these operations. About the detailed processing flow and description, refer to :ref:`Core feature: Interrupt <lab1_3>` and :ref:`Core feature: Nesting of Interrupts <lab1_4>`.
 
 
 In |nuclei_sdk|, ``gd32vf103_rvstar.h`` provides API to operate the on-board peripherals, ``gd32vf103_timer.h`` provides API to operate the SoC Timer, ``gd32vf103_exti.h`` provides API to operate the SoC EXTI, ``core_feature_eclic.h`` provides API to config ECLIC feature for Nuclei Core.
