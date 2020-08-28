@@ -75,7 +75,9 @@ void spi_config()
 */
 void lcd_display()
 {
-    LCD_ShowString(0, 0, lcddev.width, lcddev.height, 24, RED, "Hello World"); 
-    LCD_ShowString(0, 25, lcddev.width,(lcddev.height-25), 16, GREEN, "Hummbirdv2 MCU"); 
-    LCD_ShowString(0, 41, lcddev.width,(lcddev.height-50), 16, BLUE, "Nuclei System Technology"); 
+    LCD_ShowString(0, 0, lcddev.width, lcddev.height,      24, RED,   "Hello World"); 
+    LCD_ShowString(0, 25, lcddev.width,(lcddev.height-25), 16, GREEN, "DDR200T Dev Board"); 
+    LCD_ShowString(0, 41, lcddev.width,(lcddev.height-41), 16, GREEN, "Hummingbirdv2 MCU"); 
+    LCD_ShowString(0, 57, lcddev.width,(lcddev.height-57), 16, GREEN, "E203 RISC-V Core"); 
+    LCD_ShowString(0, 73, lcddev.width,(lcddev.height-73), 16, BLUE,  "Nuclei System Technology"); 
 }
