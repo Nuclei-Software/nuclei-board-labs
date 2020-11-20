@@ -17,7 +17,7 @@ typedef struct
 } LCD_Dev; 	  
 
 
-#define LCD_RS_MASK      (1<<18) 
+#define LCD_RS_MASK      (1<<12) 
 
 #define LCD_DIR_Mode  	  0
 #define USE_HORIZONTAL    0
