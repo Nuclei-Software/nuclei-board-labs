@@ -1,6 +1,6 @@
 TARGET = gpio_toggle
 
-HBIRD_SDK_ROOT = ../../..
+HBIRD_SDK_ROOT = ../../../..
 
 SRCDIRS = .
 

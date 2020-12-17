@@ -1,6 +1,6 @@
-TARGET = spi_lcd
+TARGET = i2c_eeprom
 
-HBIRD_SDK_ROOT = ../../..
+HBIRD_SDK_ROOT = ../../../..
 
 SRCDIRS = .
 

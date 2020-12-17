@@ -1,6 +1,6 @@
-TARGET = demo_iasm
+TARGET = pwm_led
 
-HBIRD_SDK_ROOT = ../../..
+HBIRD_SDK_ROOT = ../../../..
 
 SRCDIRS = .
 
