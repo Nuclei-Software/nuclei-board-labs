@@ -131,7 +131,7 @@ Try to create you own application to control the peripherals of |rv_star| in oth
         gd_rvstar_led_init(LED3);
 
         /* configure WKUP button pin as input */
-        gd_rvstar_key_init(WAKEUP_KEY_GPIO_PORT,KEY_MODE_EXTI);
+        gd_rvstar_key_init(WAKEUP_KEY_GPIO_PORT,KEY_MODE_GPIO);
 
         test();
 
