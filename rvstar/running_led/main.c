@@ -22,7 +22,7 @@ int main(void)
     gd_rvstar_led_init(LED3);
 
     /* configure WKUP button pin as input */
-    gd_rvstar_key_init(WAKEUP_KEY_GPIO_PORT,KEY_MODE_EXTI);
+    gd_rvstar_key_init(WAKEUP_KEY_GPIO_PORT,KEY_MODE_GPIO);
 
     test();
 
@@ -37,10 +37,10 @@ int main(void)
 void test(void)
 {
 
-	uint16_t cnt = 0;
-
-	printf("\r\n USART printf & LED & Key example \r\n");
-	printf("\r\n Please press the PA0-WKUP button, the LED color will be changed\r\n");
+    uint16_t cnt = 0;
+    
+    printf("\r\n USART printf & LED & Key example \r\n");
+    printf("\r\n Please press the PA0-WKUP button, the LED color will be changed\r\n");
 
     while(1){
 
