@@ -6,6 +6,6 @@ SRCDIRS = .
 
 INCDIRS = .
 
-COMMON_FLAGS := -O0 -fgnu89-inline
+COMMON_FLAGS := -O0
 
 include $(HBIRD_SDK_ROOT)/Build/Makefile.base
