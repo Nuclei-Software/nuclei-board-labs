@@ -17,32 +17,28 @@ int main(void)
     key_config();
     led_off();
 
-    while (1)
-    {
+    while (1) {
         /* the first key press detected */
-        if(key_get_status() == SET)
-        {   
+        if (key_get_status() == SET) {
             /* delay 100ms for jitters elimination */
             delay_1ms(100);
             /* check again that the key is pressed */
-            if(key_get_status() == SET)
-            {
-                switch (led_status)
-                {
-                case 0:
-                    led_on();                    
-                    break;
-                case 1:
-                    led_off();
-                    break;
-                default:
-                    break;
+            if (key_get_status() == SET) {
+                switch (led_status) {
+                    case 0:
+                        led_on();
+                        break;
+                    case 1:
+                        led_off();
+                        break;
+                    default:
+                        break;
                 }
                 /* switch the status of the led */
-                led_status = !led_status;  
+                led_status = !led_status;
             }
         }
-    }    
+    }
 }
 
 void led_config()

@@ -10,8 +10,7 @@ int main(void)
     /* init the green led */
     led_config();
 
-    while (1)
-    {
+    while (1) {
         /* turn on the led and delay 2s */
         led_on();
         delay_1ms(2000);
@@ -19,7 +18,7 @@ int main(void)
         /* turn off the led and delay 2s */
         led_off();
         delay_1ms(2000);
-    }    
+    }
 }
 
 void led_config()
