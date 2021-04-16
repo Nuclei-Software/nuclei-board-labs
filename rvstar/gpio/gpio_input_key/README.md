@@ -42,7 +42,7 @@ Then you can switch the green led by pressing the PA0-WKUP key on the board.
 
 ## Build and run using other tools
 
-If you are not familar with command line, you can also create project using Nuclei Studio or PlatformIO IDE, and put this example code in IDE, and build, upload and debug on it.
+If you are not familar with command line, you can also create projects using Nuclei Studio and PlatformIO IDE, put this example code in the IDE and then build, upload and debug on it.
 
 ### Create a project
 
