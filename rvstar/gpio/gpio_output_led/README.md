@@ -52,7 +52,7 @@ You can create a project in Nuclei Studio IDE, PlatformIO IDE or Segger Embedded
 
 Copy the main.c file from this directory and replace the existing application code in the IDE project directory.
 
-## Build and Upload
+### Build and Upload
 
 Connect RVSTAR board to your PC, build and upload the project and then you will see the green led blink.
 
