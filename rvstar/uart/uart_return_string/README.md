@@ -1,6 +1,6 @@
 # Introduction
 
-This is a GPIO output example to show how to light up the built-in green led of RVSTAR board and make it blink.
+This is an UART example for RVSTAR board that uses a ring buffer to receive a string that ends with a '\n' you input and send it back immediately in the serial terminal.
 
 # How to use
 
@@ -20,7 +20,7 @@ setup.bat
 git clone https://github.com/Nuclei-Software/nuclei-board-labs
 cd nuclei-board-labs/
 # cd to this example
-cd rvstar/gpio/gpio_output_led
+cd rvstar/uart/uart_return_string
 # Build this example for nuclei rvstar board
 ## clean this example first
 make SOC=gd32vf103 BOARD=gd32vf103v_rvstar clean
@@ -34,7 +34,7 @@ make SOC=gd32vf103 BOARD=gd32vf103v_rvstar upload
 make SOC=gd32vf103 BOARD=gd32vf103v_rvstar debug
 ~~~
 
-Then you will see the green led blink.
+Then you can use a serial terminal tool like Minicom or CoolTerm to connect the board with baudrate 115200. Then every time you input a string that ends with a '\n', you will see the string sent back and printed in the terminal.
 
 **You can also refer to this guide for more details:**
 
@@ -46,7 +46,7 @@ If you are not familar with command line, you can also create projects using Nuc
 
 ### Create a project
 
-You can create a project in Nuclei Studio IDE, PlatformIO IDE or Segger Embedded Studio.
+You can create a project in Nuclei Studio IDE or PlatformIO IDE.
 
 ### Copy the source code
 
@@ -54,7 +54,7 @@ Copy the main.c file from this directory and replace the existing application co
 
 ### Build and Upload
 
-Connect RVSTAR board to your PC, build and upload the project and then you will see the green led blink.
+Connect RVSTAR board to your PC, build and upload the project and then you can use a serial terminal tool in your IDE or other tools like Minicom or CoolTerm to connect the board with baudrate 115200. Then every time you input a string that ends with a '\n', you will see the string sent back and printed in the terminal.
 
 ## Reference
 

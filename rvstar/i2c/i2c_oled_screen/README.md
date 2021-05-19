@@ -1,6 +1,6 @@
 # Introduction
 
-This is a GPIO output example to show how to light up the built-in green led of RVSTAR board and make it blink.
+This is an I2C example that uses RVSTAR board to control a 0.96-inch OLED screen(i2c interface) to show different characters and pictures.
 
 # How to use
 
@@ -20,7 +20,7 @@ setup.bat
 git clone https://github.com/Nuclei-Software/nuclei-board-labs
 cd nuclei-board-labs/
 # cd to this example
-cd rvstar/gpio/gpio_output_led
+cd rvstar/i2c/i2c_oled_screen
 # Build this example for nuclei rvstar board
 ## clean this example first
 make SOC=gd32vf103 BOARD=gd32vf103v_rvstar clean
@@ -34,7 +34,7 @@ make SOC=gd32vf103 BOARD=gd32vf103v_rvstar upload
 make SOC=gd32vf103 BOARD=gd32vf103v_rvstar debug
 ~~~
 
-Then you will see the green led blink.
+Then you can see the OLED screen show Chinese characters, English characters and a lovely picutre.
 
 **You can also refer to this guide for more details:**
 
@@ -46,15 +46,15 @@ If you are not familar with command line, you can also create projects using Nuc
 
 ### Create a project
 
-You can create a project in Nuclei Studio IDE, PlatformIO IDE or Segger Embedded Studio.
+You can create a project in Nuclei Studio IDE or PlatformIO IDE.
 
 ### Copy the source code
 
-Copy the main.c file from this directory and replace the existing application code in the IDE project directory.
+Copy all the *.c and *.h files from this directory and replace the existing application code in the IDE project directory.
 
 ### Build and Upload
 
-Connect RVSTAR board to your PC, build and upload the project and then you will see the green led blink.
+Connect RVSTAR board with the OLED screen, and then connect RVSTAR to your PC, build and upload the project and then you can see the OLED screen show Chinese characters, English characters and a lovely picutre.
 
 ## Reference
 
