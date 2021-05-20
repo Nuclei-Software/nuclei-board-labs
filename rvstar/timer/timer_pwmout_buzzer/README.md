@@ -1,11 +1,11 @@
 # Introduction
 
-This is a TIMER example that uses the PWM function of TIMER2_CH3(PB3) to control the buzzer to play some music.
+This is a TIMER example that uses the PWM function of TIMER2_CH3(PB1) to control the buzzer to play some music.
 
 # How to use
 
 ## Connect the buzzer
-You need first connect the buzzer's positive electrode to the PB3 pin and negative electrode to the GND of RVSTAR board.
+You need first connect the buzzer's positive electrode to the PB1 pin and negative electrode to the GND of RVSTAR board.
 
 ## Build and run using Nuclei SDK
 
