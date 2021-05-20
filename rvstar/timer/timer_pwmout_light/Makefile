@@ -1,6 +1,6 @@
-TARGET = timer_pwm
+TARGET = timer_pwmout_light
 
-NUCLEI_SDK_ROOT = ../../..
+NUCLEI_SDK_ROOT = ../../../..
 
 SRCDIRS = .
 
