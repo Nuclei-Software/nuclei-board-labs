@@ -1,6 +1,6 @@
 # Introduction
 
-This is an FWDGT example for RVSTAR board that explains how to configure the FWDGT module. It shows how to reload the FWDGT counter at regulate period using the EXTI interrupt. The FWDGT timeout is set to 1000ms (the timeout may varies due to IRC40K frequency dispersion).
+This is an FWDGT example for RVSTAR board that explains how to configure the FWDGT module. It shows how to reload the FWDGT counter at regulate period in the main function and trigger the FWDGT reset by using an EXTI interrupt. The FWDGT timeout is set to 1000ms (the timeout may varies due to IRC40K frequency dispersion).
 
 # How to use
 
