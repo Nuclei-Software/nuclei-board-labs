@@ -1,0 +1,15 @@
+## Package Base Information
+name: bdp-nuclei_board_labs
+owner: nuclei
+version: 1.0.0
+description: Nuclei board labs for e203_hbirdv2 and rvstar
+type: bdp
+keywords:
+  - application
+  - risc-v
+license: Apache-2.0
+homepage: https://github.com/Nuclei-Software/nuclei-board-labs
+contributors:
+  - Can Hu, hucan0216@163.com
+  - Yang Xu, zeonphantom@163.com
+  - Huaqi Fang, 578567190@qq.com
