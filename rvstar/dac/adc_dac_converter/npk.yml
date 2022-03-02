@@ -1,0 +1,56 @@
+## Package Base Information
+name: app-rvstar_adc_dac_converter
+owner: nuclei
+version:
+description: ADC and DAC Converter Demo for RVSTAR Board
+type: app
+keywords:
+  - baremetal
+  - DAC
+  - ADC
+  - RVSTAR
+category: baremetal application
+license: Apache-2.0
+homepage: https://github.com/Nuclei-Software/nuclei-board-labs
+
+## Package Dependency
+dependencies:
+  - name: bsp-nsdk_gd32vf103v_rvstar
+    version:
+
+## Package Configurations
+configuration:
+  app_commonflags:
+    value:
+    type: text
+    description: Application Compile Flags
+
+## Set Configuration for other packages
+setconfig:
+
+
+## Source Code Management
+codemanage:
+  copyfiles:
+    - path: ["*.c", "*.h"]
+  incdirs:
+    - path: ["./"]
+  libdirs:
+  ldlibs:
+    - libs:
+
+## Build Configuration
+buildconfig:
+  - type: gcc
+    common_flags: # flags need to be combined together across all packages
+      - flags: ${app_commonflags}
+    ldflags:
+    cflags:
+    asmflags:
+    cxxflags:
+    prebuild_steps: # could be override by app/bsp type
+      command:
+      description:
+    postbuild_steps: # could be override by app/bsp type
+      command:
+      description:

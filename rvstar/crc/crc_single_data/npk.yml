@@ -1,0 +1,55 @@
+## Package Base Information
+name: app-rvstar_crc_single_data
+owner: nuclei
+version:
+description: CRC Calc Demo for RVSTAR Board
+type: app
+keywords:
+  - baremetal
+  - CRC
+  - RVSTAR
+category: baremetal application
+license: Apache-2.0
+homepage: https://github.com/Nuclei-Software/nuclei-board-labs
+
+## Package Dependency
+dependencies:
+  - name: bsp-nsdk_gd32vf103v_rvstar
+    version:
+
+## Package Configurations
+configuration:
+  app_commonflags:
+    value:
+    type: text
+    description: Application Compile Flags
+
+## Set Configuration for other packages
+setconfig:
+
+
+## Source Code Management
+codemanage:
+  copyfiles:
+    - path: ["*.c", "*.h"]
+  incdirs:
+    - path: ["./"]
+  libdirs:
+  ldlibs:
+    - libs:
+
+## Build Configuration
+buildconfig:
+  - type: gcc
+    common_flags: # flags need to be combined together across all packages
+      - flags: ${app_commonflags}
+    ldflags:
+    cflags:
+    asmflags:
+    cxxflags:
+    prebuild_steps: # could be override by app/bsp type
+      command:
+      description:
+    postbuild_steps: # could be override by app/bsp type
+      command:
+      description:
