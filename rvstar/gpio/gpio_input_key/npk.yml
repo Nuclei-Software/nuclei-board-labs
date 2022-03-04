@@ -1,14 +1,14 @@
 ## Package Base Information
-name: app-rvstar_adc_adc_regular_scan
+name: app-rvstar_gpio_gpio_input_key
 owner: nuclei
 version: 1.0.0
-description: Nuclei rvstar adc adc_regular_scan lab
+description: Nuclei rvstar gpio gpio_input_key lab
 type: app
 keywords:
   - nuclei board labs
 category: Board Labs
 license: Apache-2.0
-homepage: https://github.com/Nuclei-Software/nuclei-board-labs/tree/master/rvstar/adc/adc_regular_scan
+homepage: https://github.com/Nuclei-Software/nuclei-board-labs/tree/master/rvstar/gpio/gpio_input_key
 
 ## Package Dependency
 dependencies:

@@ -1,20 +1,19 @@
 ## Package Base Information
-name: app-rvstar_crc_single_data
+name: app-rvstar_crc_crc_single_data
 owner: nuclei
-version:
-description: CRC Calc Demo for RVSTAR Board
+version: 1.0.0
+description: Nuclei rvstar crc crc_single_data lab
 type: app
 keywords:
-  - baremetal
-  - CRC
-  - RVSTAR
-category: baremetal application
+  - nuclei board labs
+category: Board Labs
 license: Apache-2.0
-homepage: https://github.com/Nuclei-Software/nuclei-board-labs
+homepage: https://github.com/Nuclei-Software/nuclei-board-labs/tree/master/rvstar/crc/crc_single_data
 
 ## Package Dependency
 dependencies:
   - name: bsp-nsdk_gd32vf103v_rvstar
+    owner: nuclei
     version:
 
 ## Package Configurations
@@ -24,19 +23,15 @@ configuration:
     type: text
     description: Application Compile Flags
 
-## Set Configuration for other packages
-setconfig:
-
-
 ## Source Code Management
 codemanage:
   copyfiles:
-    - path: ["*.c", "*.h"]
+    - path: ["*.c", "*.h", "*.S", "*.s", "*.C"]
   incdirs:
     - path: ["./"]
   libdirs:
   ldlibs:
-    - libs:
+    - libs: ["m"]
 
 ## Build Configuration
 buildconfig:
