@@ -1,14 +1,14 @@
 ## Package Base Information
-name: app-rvstar_adc_adc_regular_scan
+name: app-rvstar_demo_iasm
 owner: nuclei
 version: 1.0.0
-description: Nuclei rvstar adc adc_regular_scan lab
+description: Nuclei rvstar demo_iasm lab
 type: app
 keywords:
   - nuclei board labs
 category: Board Labs
 license: Apache-2.0
-homepage: https://github.com/Nuclei-Software/nuclei-board-labs/tree/master/rvstar/adc/adc_regular_scan
+homepage: https://github.com/Nuclei-Software/nuclei-board-labs/tree/master/rvstar/demo_iasm
 
 ## Package Dependency
 dependencies:

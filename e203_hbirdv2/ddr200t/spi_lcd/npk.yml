@@ -1,18 +1,18 @@
 ## Package Base Information
-name: app-rvstar_adc_adc_regular_scan
+name: app-e203_hbirdv2_ddr200t_spi_lcd
 owner: nuclei
 version: 1.0.0
-description: Nuclei rvstar adc adc_regular_scan lab
+description: Nuclei e203_hbirdv2 ddr200t spi_lcd lab
 type: app
 keywords:
   - nuclei board labs
 category: Board Labs
 license: Apache-2.0
-homepage: https://github.com/Nuclei-Software/nuclei-board-labs/tree/master/rvstar/adc/adc_regular_scan
+homepage: https://github.com/Nuclei-Software/nuclei-board-labs/tree/master/e203_hbirdv2/ddr200t/spi_lcd
 
 ## Package Dependency
 dependencies:
-  - name: bsp-nsdk_gd32vf103v_rvstar
+  - name: bsp-hsdk_ddr200t
     owner: nuclei
     version:
 
