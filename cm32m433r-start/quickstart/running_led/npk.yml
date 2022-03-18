@@ -1,0 +1,51 @@
+## Package Base Information
+name: app-cm32m433r-start_running_led
+owner: nuclei
+version: 1.0.0
+description: CM32M433R-START running_led lab
+type: app
+keywords:
+  - nuclei board labs
+  - quick start 
+category: Board Labs
+license: Apache-2.0
+homepage: https://github.com/Nuclei-Software/nuclei-board-labs/tree/master/cm32m433r-start/quickstart/running_led
+
+## Package Dependency
+dependencies:
+  - name: bsp-cm32m4xxr_cm32m433rstart
+    owner: XinShengTech
+    version:
+
+## Package Configurations
+configuration:
+  app_commonflags:
+    value:
+    type: text
+    description: Application Compile Flags
+
+## Source Code Management
+codemanage:
+  copyfiles:
+    - path: ["Include", "Source"]
+  incdirs:
+    - path: ["Include"]
+  libdirs:
+  ldlibs:
+    - libs: ["m"]
+
+## Build Configuration
+buildconfig:
+  - type: gcc
+    common_flags: # flags need to be combined together across all packages
+      - flags: ${app_commonflags}
+    ldflags:
+    cflags:
+    asmflags:
+    cxxflags:
+    prebuild_steps: # could be override by app/bsp type
+      command:
+      description:
+    postbuild_steps: # could be override by app/bsp type
+      command:
+      description:
