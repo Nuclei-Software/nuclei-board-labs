@@ -17,3 +17,28 @@ In Nuclei SDK, the [Nuclei MCU Software Interface Standard (NMSIS)](https://gith
 
 For more details about this handbook, please click https://doc.nucleisys.com/nuclei_board_labs
 
+## Use it in Nuclei Studio
+
+Open Nuclei Studio, and Open `RV-Tools` -> `Nuclei Package Management`, and download `sdk-nuclei_sdk` and `sdk-hbird_sdk`, see below.
+
+![NPK Package Requiremetns](doc/source/asserts/npk_requirements.jpg)
+
+And then you can download this repo as zip or directly download `bdp-nuclei_board_labs` package.
+
+Then you can see extra board labs examples when you create New Nuclei RISC-V C/C++ Example.
+
+## Use it in Nuclei SDK
+
+Just download or clone the nuclei-board-labs repo to existing [nuclei sdk repo](https://github.com/Nuclei-Software/nuclei-sdk).
+
+Make sure the source code structure as below.
+
+~~~shell
+<Nuclei SDK>:
+  - Build
+  - application
+  - nuclei-board-labs # this repo
+  - xxxxx
+~~~
+
+And then you can use it like other nuclei sdk applications.
