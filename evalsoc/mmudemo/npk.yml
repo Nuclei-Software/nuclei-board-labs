@@ -1,0 +1,56 @@
+## Package Base Information
+name: app_evalsoc_mmudemo
+owner: nuclei
+version: 1.0.0
+description: nuclei evalsoc mmu demo
+type: app
+keywords:
+  - nuclei board labs
+category: Board Labs
+license: Apache-2.0
+homepage: https://github.com/Nuclei-Software/nuclei-board-labs/tree/master/evalsoc/mmucase
+
+## Package Dependency
+dependencies:
+  - name: ssp-nsdk_evalsoc
+    owner: nuclei
+    version:
+
+## Package Configurations
+configuration:
+  app_commonflags:
+    value: -O0
+    type: text
+    description: Application Compile Flags
+
+setconfig:
+  - config: nuclei_core
+    value: ux900
+  - config: download_mode
+    value: ddr
+
+## Source Code Management
+codemanage:
+  copyfiles:
+    - path: ["*.c", "*.h", "*.S", "*.s", "*.C"]
+  incdirs:
+    - path: ["./"]
+  libdirs:
+  ldlibs:
+    - libs: ["m"]
+
+## Build Configuration
+buildconfig:
+  - type: gcc
+    common_flags: # flags need to be combined together across all packages
+      - flags: ${app_commonflags}
+    ldflags:
+    cflags:
+    asmflags:
+    cxxflags:
+    prebuild_steps: # could be override by app/bsp type
+      command:
+      description:
+    postbuild_steps: # could be override by app/bsp type
+      command:
+      description:
