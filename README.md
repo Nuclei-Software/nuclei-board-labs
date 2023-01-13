@@ -19,7 +19,7 @@ For more details about this handbook, please click https://doc.nucleisys.com/nuc
 
 ## Use it in Nuclei Studio
 
-Open Nuclei Studio, and Open `RV-Tools` -> `Nuclei Package Management`, and download `sdk-nuclei_sdk` and `sdk-hbird_sdk`, see below.
+Open Nuclei Studio, and Open `RV-Tools` -> `Nuclei Package Management`, and download `sdk-nuclei_sdk`, `sdk-hbird_sdk` and `sdk-cm32m4xxr` see below.
 
 ![NPK Package Requiremetns](doc/source/asserts/npk_requirements.jpg)
 
