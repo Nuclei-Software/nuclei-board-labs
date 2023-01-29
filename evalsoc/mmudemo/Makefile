@@ -12,6 +12,9 @@ INCDIRS := .
 SOC := evalsoc
 CORE := ux900
 DOWNLOAD := ddr
+# if you want to work on smp cores change SMP value
+# to 2 or 4 to match your real cpu count
+SMP ?=
 
 COMMON_FLAGS := -O0
 
