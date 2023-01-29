@@ -1,6 +1,6 @@
 # How to run
 
-Follow [general steps][../../README.md] to setup environment.
+Follow [general steps](../../README.md) to setup environment.
 
 ## Run in command line
 
