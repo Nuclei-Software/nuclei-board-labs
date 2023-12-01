@@ -35,7 +35,7 @@ codemanage:
 
 ## Build Configuration
 buildconfig:
-  - type: gcc
+  - type: common
     common_flags: # flags need to be combined together across all packages
       - flags: ${app_commonflags}
     ldflags:
