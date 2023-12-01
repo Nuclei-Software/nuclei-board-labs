@@ -1,0 +1,58 @@
+## Package Base Information
+name: app_evalsoc_zcmt_jumptable
+owner: nuclei
+version: 1.0.0
+description: Nuclei Zcmt Jump Table Demo
+type: app
+keywords:
+  - nuclei board labs
+  - baremetal
+  - jump table
+category: Board Labs
+license: Apache-2.0
+homepage: https://github.com/Nuclei-Software/nuclei-board-labs/tree/master/evalsoc/zcmt_jumptable
+
+## Package Dependency
+dependencies:
+  - name: ssp-nsdk_evalsoc
+    owner: nuclei
+    version:
+
+## Package Configurations
+configuration:
+  app_commonflags:
+    value: -O3
+    type: text
+    description: Application Compile Flags
+
+setconfig:
+  - config: nuclei_core
+    value: n300
+  - config: nuclei_archext
+    value: _zca_zcb_zcmp_zcmt
+
+## Source Code Management
+codemanage:
+  copyfiles:
+    - path: ["*.c", "*.h", "*.S", "*.s", "*.C"]
+  incdirs:
+    - path: ["./"]
+  libdirs:
+  ldlibs:
+    - libs: [""]
+
+## Build Configuration
+buildconfig:
+  - type: common
+    common_flags: # flags need to be combined together across all packages
+      - flags: ${app_commonflags}
+    ldflags:
+    cflags:
+    asmflags:
+    cxxflags:
+    prebuild_steps: # could be override by app/bsp type
+      command:
+      description:
+    postbuild_steps: # could be override by app/bsp type
+      command:
+      description:
