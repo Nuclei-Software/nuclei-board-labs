@@ -1,0 +1,32 @@
+{
+    "run_config": {
+        "target" : "qemu",
+        "hardware" : {
+            "baudrate": 115200,
+            "timeout": 60
+        },
+        "qemu": {
+            "qemu32": "qemu-system-riscv32",
+            "qemu64": "qemu-system-riscv64",
+            "timeout": 60
+        }
+    },
+    "build_target": "clean all",
+    "build_config": {
+        "SOC": "evalsoc"
+    },
+    "checks": {
+        "PASS": ["pass"],
+        "FAIL": ["MEPC", "fail"]
+    },
+    "appdirs": [
+        "."
+    ],
+    "appdirs_ignore": [
+        "nuclei_sdk",
+        "nuclei-sdk",
+        "application"
+    ],
+    "appconfig": {
+    }
+}

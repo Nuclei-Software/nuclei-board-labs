@@ -1,0 +1,28 @@
+{
+    "run_config": {
+        "target" : "hardware",
+        "hardware" : {
+            "baudrate": 115200,
+            "timeout": 60
+        },
+        "qemu": {
+            "qemu32": "qemu-system-riscv32",
+            "qemu64": "qemu-system-riscv64",
+            "timeout": 60
+        }
+    },
+    "build_configs": {
+        "branch" : {"CASE": "branch"},
+        "index" : {"CASE": "index"},
+        "matmul" : {"CASE": "matmul"},
+        "reduce" : {"CASE": "reduce"},
+        "saxpy" : {"CASE": "saxpy"},
+        "sgemm" : {"CASE": "sgemm"},
+        "strcmp" : {"CASE": "strcmp"},
+        "strcpy" : {"CASE": "strcpy"},
+        "strlen" : {"CASE": "strlen"},
+        "strncpy" : {"CASE": "strncpy"}
+    },
+    "expecteds" : {
+    }
+}
