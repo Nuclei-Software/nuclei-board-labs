@@ -1,7 +1,7 @@
 ## Package Base Information
 name: app-`appname`
 owner: nuclei
-version: 1.0.0
+version: 1.1.0
 description: Nuclei `appdesc` lab
 type: app
 keywords:
@@ -35,7 +35,7 @@ codemanage:
 
 ## Build Configuration
 buildconfig:
-  - type: gcc
+  - type: common
     common_flags: # flags need to be combined together across all packages
       - flags: ${app_commonflags}
     ldflags:
