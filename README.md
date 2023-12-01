@@ -19,6 +19,10 @@ For more details about this handbook, please click https://doc.nucleisys.com/nuc
 
 ## Use it in Nuclei Studio
 
+> Nuclei Studio 2023.10 is required now.
+
+> Some packages required may not yet updated to support 2023.10.
+
 Open Nuclei Studio, and Open `RV-Tools` -> `Nuclei Package Management`, and download `sdk-nuclei_sdk`, `sdk-hbird_sdk` and `sdk-cm32m4xxr` see below.
 
 ![NPK Package Requiremetns](doc/source/asserts/npk_requirements.jpg)

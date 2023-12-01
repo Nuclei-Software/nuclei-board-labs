@@ -1,8 +1,8 @@
 ## Package Base Information
 name: bdp-nuclei_board_labs
 owner: nuclei
-version: 1.1.1-dev
-description: Nuclei board labs for e203_hbirdv2 and rvstar
+version: 1.2.0
+description: Nuclei Board Labs For EvalSoC/HBirdv2/RVSTAR/CM32START
 type: bdp
 keywords:
   - application
