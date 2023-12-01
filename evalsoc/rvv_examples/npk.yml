@@ -11,7 +11,7 @@ keywords:
   - vector
 category: Board Labs
 license: BSD
-homepage:
+homepage: https://github.com/Nuclei-Software/nuclei-board-labs/tree/master/evalsoc/rvv_examples
 
 ## Package Dependency
 dependencies:
