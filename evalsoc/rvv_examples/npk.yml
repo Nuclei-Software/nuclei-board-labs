@@ -1,0 +1,87 @@
+## Package Base Information
+name: app-nsdk_rvv_examples
+owner: nuclei
+version: 0.1.0
+description: RISC-V Vector Examples
+type: app
+keywords:
+  - baremetal
+  - risc-v
+  - vector
+category: baremetal application
+license: BSD
+homepage:
+
+## Package Dependency
+dependencies:
+  - name: sdk-nuclei_sdk
+
+## Package Configurations
+configuration:
+  rvv_case:
+    default_value: branch
+    type: choice
+    description: Vector Case
+    choices:
+      - name: branch
+        description: rvv branch
+      - name: index
+        description: rvv index
+      - name: matmul
+        description: rvv matmul
+      - name: memcpy
+        description: rvv memcpy
+      - name: reduce
+        description: rvv reduce
+      - name: saxpy
+        description: rvv saxpy
+      - name: sgemm
+        description: rvv sgemm
+      - name: strcmp
+        description: rvv strcmp
+      - name: strcpy
+        description: rvv strcpy
+      - name: strlen
+        description: rvv strlen
+      - name: strncpy
+        description: rvv strncpy
+  app_commonflags:
+    value: -O3
+    type: text
+    description: Application Compile Flags
+
+## Set Configuration for other packages
+setconfig:
+  - config: nuclei_core
+    value: nx900fd
+  - config: nuclei_archext
+    value : v
+  - config: stdclib
+    value : newlib_small
+
+## Source Code Management
+codemanage:
+  copyfiles:
+    - path: ["rvv_${rvv_case}.c", "common.h"]
+  incdirs:
+    - path: ["."]
+  libdirs:
+  ldlibs:
+    - libs: [ ]
+
+## Build Configuration
+buildconfig:
+  - type: common
+    common_flags: # flags need to be combined together across all packages
+      - flags: ${app_commonflags}
+    ldflags:
+    cflags:
+    asmflags:
+    cxxflags:
+    common_defines:
+    prebuild_steps: # could be override by app/bsp type
+      command:
+      description:
+    postbuild_steps: # could be override by app/bsp type
+      command:
+      description:
