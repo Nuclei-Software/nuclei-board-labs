@@ -6,15 +6,16 @@ description: RISC-V Vector Examples
 type: app
 keywords:
   - baremetal
+  - nuclei board labs
   - risc-v
   - vector
-category: baremetal application
+category: Board Labs
 license: BSD
 homepage:
 
 ## Package Dependency
 dependencies:
-  - name: sdk-nuclei_sdk
+  - name: ssp-nsdk_evalsoc
 
 ## Package Configurations
 configuration:

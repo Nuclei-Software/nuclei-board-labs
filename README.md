@@ -46,3 +46,11 @@ Make sure the source code structure as below.
 ~~~
 
 And then you can use it like other nuclei sdk applications.
+
+## Add new board labs
+
+If you are adding new board lab, you need to set `category: Board Labs` in `npk.yml`, so user can select board labs
+via `category` in project example wizard.
+
+You can refer to any example located in this folder.
+
