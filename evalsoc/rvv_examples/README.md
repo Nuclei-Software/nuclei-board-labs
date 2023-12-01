@@ -13,9 +13,6 @@ You need to download Nuclei SDK >= 0.5.0 version.
 ~~~shell
 cd /path/to/nuclei-sdk
 cd nuclei-board-labs/evalsoc/rvv_examples
-# clone this repo to this folder
-# assume you have clone or download it to rvv_examples
-cd rvv_examples
 # build it
 # Assume environment is already setup, see https://doc.nucleisys.com/nuclei_sdk/quickstart.html
 # Require Nuclei Studio 2023.10

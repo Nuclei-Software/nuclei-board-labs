@@ -29,7 +29,7 @@ This output is for non-smp mode, only 1 cpu is used.
 ~~~shell
 $ make run_qemu
 Run program mmudemo.elf on qemu-system-riscv64
-qemu-system-riscv64 -M nuclei_u,download=ddr -cpu nuclei-ux900,ext= -smp 1 -icount shift=0 \
+qemu-system-riscv64 -M nuclei_evalsoc,download=ddr -cpu nuclei-ux900,ext= -smp 1 -icount shift=0 \
         -nodefaults -nographic -serial stdio -kernel mmudemo.elf
 Nuclei SDK Build Time: Jan 29 2023, 17:37:34
 Download Mode: DDR
@@ -48,7 +48,7 @@ This output is for smp mode, 2 cpus are used.
 
 ~~~shell
 $ make SMP=2 clean all
-$ qemu-system-riscv64 -M nuclei_u,download=ddr -cpu nuclei-ux900,ext= -smp 2 -nodefaults -nographic -serial stdio -kernel mmudemo.elf
+$ qemu-system-riscv64 -M nuclei_evalsoc,download=ddr -cpu nuclei-ux900,ext= -smp 2 -nodefaults -nographic -serial stdio -kernel mmudemo.elf
 Nuclei SDK Build Time: Jan 29 2023, 17:39:25
 Download Mode: DDR
 CPU Frequency 129105 Hz
