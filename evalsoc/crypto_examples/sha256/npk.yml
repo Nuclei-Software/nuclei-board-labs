@@ -1,0 +1,55 @@
+## Package Base Information
+name: app-nsdk-crypto_tests-sha256
+owner: nuclei
+version:
+description: SHA256 Test Example based on RISC-V Crypto Extension
+type: app
+keywords:
+  - baremetal
+  - riscv-crypto
+category: baremetal application
+license: Apache-2.0
+homepage:
+
+## Package Dependency
+dependencies:
+  - name: sdk-nuclei_sdk
+    version: ~0.5.0
+
+## Package Configurations
+configuration:
+  app_commonflags:
+    value: >-
+      -O2 -D__ZSCRYPTO -DRVINTRIN_EMULATE=1
+    type: text
+    description: Application Compile Flags
+
+setconfig:
+  - config: nuclei_archext
+    value: "_zba_zbb_zbc_zbs_zk_zks"
+
+## Source Code Management
+codemanage:
+  copyfiles:
+    - path: ["*.c", "*.h", "zscrypto", "reference", "../share"]
+  incdirs:
+    - path: ["./"]
+  libdirs:
+  ldlibs:
+    - libs:
+
+## Build Configuration
+buildconfig:
+  - type: gcc
+    common_flags: # flags need to be combined together across all packages
+      - flags: ${app_commonflags}
+    ldflags:
+    cflags:
+    asmflags:
+    cxxflags:
+    prebuild_steps: # could be override by app/bsp type
+      command:
+      description:
+    postbuild_steps: # could be override by app/bsp type
+      command:
+      description:

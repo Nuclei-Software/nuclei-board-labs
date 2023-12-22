@@ -1,0 +1,130 @@
+## Package Base Information
+name: app-nsdk-crypto_tests-sh3
+owner: nuclei
+version:
+description: SH3 Test Example based on RISC-V Crypto Extension
+type: app
+keywords:
+  - baremetal
+  - riscv-crypto
+category: baremetal application
+license: Apache-2.0
+homepage:
+
+## Package Dependency
+dependencies:
+  - name: sdk-nuclei_sdk
+    version: ~0.5.0
+
+## Package Configurations
+configuration:
+  nuclei_core:
+    default_value: nx900fd
+    type: choice
+    global: true
+    description: Nuclei RISC-V Core
+    choices:
+      - name: nx600
+        arch: rv64imac
+        abi: lp64
+        cmodel: medany
+        tune: nuclei-600-series
+        description: NX600 Core(ARCH=rv64imac, ABI=lp64)
+      - name: nx600f
+        arch: rv64imafc
+        abi: lp64f
+        cmodel: medany
+        tune: nuclei-600-series
+        description: NX600F Core(ARCH=rv64imafc, ABI=lp64f)
+      - name: nx600fd
+        arch: rv64imafdc
+        abi: lp64d
+        cmodel: medany
+        tune: nuclei-600-series
+        description: NX600FD Core(ARCH=rv64imafdc, ABI=lp64d)
+      - name: ux600
+        arch: rv64imac
+        abi: lp64
+        cmodel: medany
+        tune: nuclei-600-series
+        description: UX600 Core(ARCH=rv64imac, ABI=lp64)
+      - name: ux600f
+        arch: rv64imafc
+        abi: lp64f
+        cmodel: medany
+        tune: nuclei-600-series
+        description: UX600F Core(ARCH=rv64imafc, ABI=lp64f)
+      - name: ux600fd
+        arch: rv64imafdc
+        abi: lp64d
+        cmodel: medany
+        tune: nuclei-600-series
+        description: UX600FD Core(ARCH=rv64imafdc, ABI=lp64d)
+      - name: nx900f
+        arch: rv64imafc
+        abi: lp64f
+        cmodel: medany
+        tune: nuclei-900-series
+        description: NX900F Core(ARCH=rv64imafc, ABI=lp64f)
+      - name: nx900fd
+        arch: rv64imafdc
+        abi: lp64d
+        cmodel: medany
+        tune: nuclei-900-series
+        description: NX900FD Core(ARCH=rv64imafdc, ABI=lp64d)
+      - name: ux900
+        arch: rv64imac
+        abi: lp64
+        cmodel: medany
+        tune: nuclei-900-series
+        description: UX900 Core(ARCH=rv64imac, ABI=lp64)
+      - name: ux900f
+        arch: rv64imafc
+        abi: lp64f
+        cmodel: medany
+        tune: nuclei-900-series
+        description: UX900F Core(ARCH=rv64imafc, ABI=lp64f)
+      - name: ux900fd
+        arch: rv64imafdc
+        abi: lp64d
+        cmodel: medany
+        tune: nuclei-900-series
+        description: UX900FD Core(ARCH=rv64imafdc, ABI=lp64d)
+
+  app_commonflags:
+    value: >-
+      -O2 -D__ZSCRYPTO -DRVINTRIN_EMULATE=1
+    type: text
+    description: Application Compile Flags
+
+setconfig:
+  - config: nuclei_archext
+    value: "_zba_zbb_zbc_zbs_zk_zks"
+
+## Source Code Management
+codemanage:
+  copyfiles:
+    - path: ["*.c", "*.h", "zscrypto_rv64", "reference", "../share"]
+      condition: $( contains(${nuclei_core}, "x"))
+
+  incdirs:
+    - path: ["./"]
+  libdirs:
+  ldlibs:
+    - libs:
+
+## Build Configuration
+buildconfig:
+  - type: gcc
+    common_flags: # flags need to be combined together across all packages
+      - flags: ${app_commonflags}
+    ldflags:
+    cflags:
+    asmflags:
+    cxxflags:
+    prebuild_steps: # could be override by app/bsp type
+      command:
+      description:
+    postbuild_steps: # could be override by app/bsp type
+      command:
+      description:
