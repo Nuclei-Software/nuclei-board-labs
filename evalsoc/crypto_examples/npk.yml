@@ -38,6 +38,7 @@ configuration:
         description: crypto sm4
 
   app_commonflags:
+    ## Note: __ZSCRYPTO is need in sha256/sha512/sm3/sm4 cases, except in aes/sha3 cases
     value: -O3 -D__ZSCRYPTO
     type: text
     description: Application Compile Flags

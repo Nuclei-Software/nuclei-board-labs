@@ -13,7 +13,27 @@ That includes several cases are as follows:
 
 ## Run in command line
 
-You need to download Nuclei SDK >= 0.5.0 version.
+1. Download or clone Nuclei SDK >= 0.5.0 version.
+
+    ~~~sh
+    $ git clone https://github.com/Nuclei-Software/nuclei-sdk.git
+    $ git checkout 0.5.0
+    ~~~
+
+2. Download or clone the nuclei-board-labs repo to existing nuclei-sdk
+   Make sure the source code structure as below.
+
+    ```
+    <Nuclei SDK>:
+    - Build
+    - application
+    - nuclei-board-labs # this repo
+    - xxxxx
+    ```
+
+   And then you can use it like other nuclei sdk applications.
+
+3. Run in command lines
 
 * **CASE**: default `aes`, which is used to specify which case you want to run.
 * **CORE**: default `nx900fd` , nuclei support 300/600/900 series
@@ -38,7 +58,7 @@ Here are logs of aes example:
 ~~~sh
 nuclei-sdk/nuclei-board-labs/evalsoc/crypto_examples$ make CORE=nx900fd CASE=aes all run_qemu
 make -C aes run_qemu
-make[1]: ½øÈëÄ¿Â¼¡°nuclei-sdk/nuclei-board-labs/evalsoc/crypto_examples/aes¡±
+make[1]: enter "nuclei-sdk/nuclei-board-labs/evalsoc/crypto_examples/aes"
 Linking    :  aes.elf
    text    data     bss     dec     hex filename
   25360    2640    5000   33000    80e8 aes.elf
@@ -96,3 +116,7 @@ Then you can build it and run it in IDE.
 Here is aes example using IDE:
 
 ![using_IDE](asserts/using_IDE.png)
+
+```
+
+```
