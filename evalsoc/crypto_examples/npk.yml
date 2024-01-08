@@ -1,0 +1,86 @@
+## Package Base Information
+name: app-nsdk_riscv_crypto_examples
+owner: nuclei
+version: 0.1.0
+description: RISC-V Crypto(K extension) Examples
+type: app
+keywords:
+  - baremetal
+  - nuclei board labs
+  - risc-v
+  - crypto
+category: Board Labs
+license: BSD
+homepage: https://github.com/Nuclei-Software/nuclei-board-labs/tree/master/evalsoc/crypto_examples
+
+## Package Dependency
+dependencies:
+  - name: ssp-nsdk_evalsoc
+
+## Package Configurations
+configuration:
+  crypto_case:
+    default_value: aes
+    type: choice
+    description: Crypto Case
+    choices:
+      - name: aes
+        description: crypto aes
+      - name: sha3
+        description: crypto sha3
+      - name: sha256
+        description: crypto sha256
+      - name: sha512
+        description: crypto sha512
+      - name: sm3
+        description: crypto sm3
+      - name: sm4
+        description: crypto sm4
+
+  app_commonflags:
+    ## Note: __ZSCRYPTO is need in sha256/sha512/sm3/sm4 cases, except in aes/sha3 cases
+    value: -O3 -D__ZSCRYPTO
+    type: text
+    description: Application Compile Flags
+
+## Set Configuration for other packages
+setconfig:
+  - config: nuclei_core
+    value: nx900fd
+  - config: nuclei_archext
+    value : _zba_zbb_zbc_zbs_zk_zks
+  - config: stdclib
+    value : newlib_small
+
+## Source Code Management
+codemanage:
+  copyfiles:
+    - path: ["${crypto_case}/*.c", "${crypto_case}/*.h", "${crypto_case}/reference", "share"]
+    - path: ["${crypto_case}/zscrypto_rv64"]
+      condition: $( contains(${nuclei_core}, "x") && (${crypto_case} == "aes" || ${crypto_case} == "sha3" || ${crypto_case} == "sha512" ) )
+    - path: ["${crypto_case}/zscrypto_rv32"]
+      condition: $( !contains(${nuclei_core}, "x") && (${crypto_case} == "aes" || ${crypto_case} == "sha512" ) )
+    - path: ["${crypto_case}/zscrypto"]
+      condition: $(${crypto_case} == "sha256" || ${crypto_case} == "sm3" || ${crypto_case} == "sm4" )
+  incdirs:
+    - path: ["${crypto_case}", "./"]
+  libdirs:
+  ldlibs:
+    - libs: [ ]
+
+## Build Configuration
+buildconfig:
+  - type: common
+    common_flags: # flags need to be combined together across all packages
+      - flags: ${app_commonflags}
+    ldflags:
+    cflags:
+    asmflags:
+    cxxflags:
+    common_defines:
+    prebuild_steps: # could be override by app/bsp type
+      command:
+      description:
+    postbuild_steps: # could be override by app/bsp type
+      command:
+      description:
