@@ -4,7 +4,7 @@
 #include <time.h>
 #include "nuclei_sdk_soc.h"
 #include "nmsis_bench.h"
-#include "../share/util.h"
+#include "share/util.h"
 
 #include "api_aes.h"
 #include "api_aes_ref.h"

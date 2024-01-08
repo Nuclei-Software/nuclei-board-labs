@@ -1,13 +1,13 @@
 TARGET = sha256
 
-CORE ?= n300fd
+CORE ?= nx900fd
 ARCH_EXT ?= _zba_zbb_zbc_zbs_zk_zks
 
-NUCLEI_SDK_ROOT = ../../../..
+NUCLEI_SDK_ROOT ?= ../../../..
 
 ifneq ($(findstring zk, $(ARCH_EXT)),)
 SRCDIRS = ./zscrypto
-CFLAGS += -D__ZSCRYPTO -DRVINTRIN_EMULATE=1
+CFLAGS += -D__ZSCRYPTO
 endif
 
 SRCDIRS += . ./reference

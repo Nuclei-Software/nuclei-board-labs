@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <time.h>
 #include "nuclei_sdk_soc.h"
-#include "../share/util.h"
+#include "share/util.h"
 #include "nmsis_bench.h"
 #include "api_sm4.h"
 BENCH_DECLARE_VAR()

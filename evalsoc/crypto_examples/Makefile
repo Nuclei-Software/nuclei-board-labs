@@ -1,6 +1,8 @@
 ## Some case may fail due to isa not match
 CASE ?= aes
 
+CORE ?= nx900fd
+
 .PHONY: all clean run_qemu upload
 
 all:

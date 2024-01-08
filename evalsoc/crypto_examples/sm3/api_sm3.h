@@ -7,7 +7,7 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#include "../share/util.h"
+#include "share/util.h"
 
 #ifndef __API_SM3__
 #define __API_SM3__

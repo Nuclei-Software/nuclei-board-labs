@@ -6,9 +6,10 @@
 @{
 */
 
-#include "../../share/util.h"
+#include "share/util.h"
 
-#include "../api_aes.h"
+#include "api_aes.h"
+#include "api_aes_ref.h"
 
 //! AES Round constants
 static const uint8_t round_const[11] = {

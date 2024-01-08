@@ -1,5 +1,5 @@
 
-#include "../Keccak.h"
+#include "Keccak.h"
 
 /*!
 @addtogroup crypto_hash_sha3_reference SHA3 Reference

@@ -38,7 +38,7 @@ configuration:
         description: crypto sm4
 
   app_commonflags:
-    value: -O3 -D__ZSCRYPTO -DRVINTRIN_EMULATE=1
+    value: -O3 -D__ZSCRYPTO
     type: text
     description: Application Compile Flags
 
@@ -54,14 +54,15 @@ setconfig:
 ## Source Code Management
 codemanage:
   copyfiles:
-    - path: ["${crypto_case}/*.c", "${crypto_case}/*.h", "${crypto_case}/zscrypto_rv64", "${crypto_case}/reference", "share"]
+    - path: ["${crypto_case}/*.c", "${crypto_case}/*.h", "${crypto_case}/reference", "share"]
+    - path: ["${crypto_case}/zscrypto_rv64"]
       condition: $( contains(${nuclei_core}, "x") && (${crypto_case} == "aes" || ${crypto_case} == "sha3" || ${crypto_case} == "sha512" ) )
-    - path: ["${crypto_case}/*.c", "${crypto_case}/*.h", "${crypto_case}/zscrypto_rv32", "${crypto_case}/reference", "share"]
+    - path: ["${crypto_case}/zscrypto_rv32"]
       condition: $( !contains(${nuclei_core}, "x") && (${crypto_case} == "aes" || ${crypto_case} == "sha512" ) )
-    - path: ["${crypto_case}/*.c", "${crypto_case}/*.h", "${crypto_case}/zscrypto", "${crypto_case}/reference", "share"]
+    - path: ["${crypto_case}/zscrypto"]
       condition: $(${crypto_case} == "sha256" || ${crypto_case} == "sm3" || ${crypto_case} == "sm4" )
   incdirs:
-    - path: ["${crypto_case}"]
+    - path: ["${crypto_case}", "./"]
   libdirs:
   ldlibs:
     - libs: [ ]

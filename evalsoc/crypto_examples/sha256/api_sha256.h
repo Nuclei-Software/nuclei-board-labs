@@ -7,7 +7,7 @@
 #include <stdint.h>
 #include <stddef.h>
 
-#include "../share/util.h"
+#include "share/util.h"
 
 #ifndef __API_SHA256__
 #define __API_SHA256__

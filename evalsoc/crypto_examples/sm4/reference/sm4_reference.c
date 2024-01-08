@@ -4,7 +4,7 @@
 #include <string.h>
 #include <stdio.h>
 
-#include "../api_sm4.h"
+#include "api_sm4.h"
 
 
 static const uint8_t SBOX[256] = {

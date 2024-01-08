@@ -6,8 +6,8 @@
 @{
 */
 
-#include "../api_aes.h"
-#include "../api_aes_ref.h"
+#include "api_aes.h"
+#include "api_aes_ref.h"
 
 //! AES Inverse SBox
 static const uint8_t d_sbox[256] = { 

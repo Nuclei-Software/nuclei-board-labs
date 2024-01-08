@@ -6,10 +6,11 @@
 @{
 */
 
-#include "../../share/util.h"
+#include "share/util.h"
 
-#include "../api_aes.h"
-#include "../ttable/common.h"
+#include "api_aes.h"
+#include "api_aes_ref.h"
+#include "ttable/common.h"
 
 #define AES_DEC_TBOX_X { \
   TUPLE(52,A7,51,F4,50), TUPLE(09,65,7E,41,53), TUPLE(6A,A4,1A,17,C3), TUPLE(D5,5E,3A,27,96), \

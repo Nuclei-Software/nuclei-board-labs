@@ -2,9 +2,9 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "../../share/riscv-crypto-intrinsics.h"
-#include "../api_sm3.h"
-#include "../../share/rvintrin.h"
+#include "share/riscv-crypto-intrinsics.h"
+#include "api_sm3.h"
+#include "share/rvintrin.h"
 
 // The block size in bytes
 #define SM3_BLOCK_SIZE (16 * sizeof(uint32_t))

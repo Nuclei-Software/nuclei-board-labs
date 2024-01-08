@@ -4,8 +4,8 @@
 #include <string.h>
 #include <stdio.h>
 
-#include "../api_sm4.h"
-#include "../../share/riscv-crypto-intrinsics.h"
+#include "api_sm4.h"
+#include "share/riscv-crypto-intrinsics.h"
 
 
 const uint32_t FK [ 4] = {

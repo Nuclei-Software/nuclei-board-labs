@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "../api_sha512.h"
+#include "api_sha512.h"
 
 static uint64_t K [80] = {
     0x428a2f98d728ae22L, 0x7137449123ef65cdL, 0xb5c0fbcfec4d3b2fL,
